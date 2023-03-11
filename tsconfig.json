@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "baseUrl": "src",
+    "outDir": "./dist/",
+    "paths": {
+      "*": ["./types/*"], // For initialize global vars types
+      "@App/*": ["./app/*"],
+      "@Store/*": ["./store/*"],
+      "@Assets/*": ["./assets/*"],
+      "@Images/*": ["./assets/images/*"],
+      "@Types/*": ["./types/*"],
+      "@Components/*": ["./app/components/*"],
+      "@Styles/*": ["./styles/*"],
+      "@Utils/*": ["./utils/*"]
+    },
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": false,
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react"
+  },
+  "include": ["src", "./declarations.d.ts"]
+}

@@ -1,0 +1,11 @@
+.bg-day {
+  background-image: url("../../assets/img/common/bg_day.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.bg-night {
+  background-image: url("../../assets/img/common/bg_night.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
