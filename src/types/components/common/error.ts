@@ -1,4 +1,6 @@
-export interface IError {
+import { Dispatch, SetStateAction } from "react";
+
+export interface IErrorProps {
   errorText: string;
-  setError: Function;
+  setError: Dispatch<SetStateAction<string>>;
 }
