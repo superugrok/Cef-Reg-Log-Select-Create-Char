@@ -63,6 +63,17 @@ export const Enter = () => {
     }
   };
 
+  const inputLiveValidate = (value: string, type: "email" | "password") => {
+    const isEmailValid = validateValue(value.trim(), "email");
+    const isPassValid = validateValue(value.trim(), "password");
+    switch (type) {
+      case "email":
+        return isEmailValid;
+      case "password":
+        return isPassValid;
+    }
+  };
+
   const login = () => {
     const email = emailLogRef.current.value.trim();
     const password = passLogRef.current.value.trim();
@@ -89,17 +100,6 @@ export const Enter = () => {
     email && password && repeatPass
       ? console.log("Commiting register")
       : identifyError();
-  };
-
-  const inputLiveValidate = (value: string, type: "email" | "password") => {
-    const isEmailValid = validateValue(value.trim(), "email");
-    const isPassValid = validateValue(value.trim(), "password");
-    switch (type) {
-      case "email":
-        return isEmailValid;
-      case "password":
-        return isPassValid;
-    }
   };
 
   return (
