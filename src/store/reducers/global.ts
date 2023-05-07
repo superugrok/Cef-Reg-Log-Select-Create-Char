@@ -18,7 +18,8 @@ export const globalReducer = createSlice({
     ) {
       state.stage = action.payload;
     },
-    CHANGE_EMAIL(state, action: PayloadAction<string>) {
+    FINISH_ENTER(state, action: PayloadAction<string>) {
+      state.stage = "chars";
       state.email = action.payload;
     },
   },

@@ -3,3 +3,7 @@ export interface IGlobalReducer {
   email: null | string;
   time: string;
 }
+
+export interface IStore {
+  global: IGlobalReducer;
+}

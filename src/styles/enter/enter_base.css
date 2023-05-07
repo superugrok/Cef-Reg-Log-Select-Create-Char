@@ -1,0 +1,52 @@
+.enter_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  padding-top: 3%;
+}
+
+.enter_form_container {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+.enter_stages_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5%;
+}
+
+.enter_stages_btn {
+  width: 40%;
+  border: 1px solid #8f8fef;
+  color: white;
+  font-weight: 500;
+  padding: 3%;
+  background: unset;
+  text-transform: uppercase;
+  transition: 0.3s ease background;
+}
+.enter_stages_btn:hover {
+  border-color: #7d7df3;
+  background-color: #7d7df3;
+}
+.enter_stages_btn_selected {
+  border-color: #7d7df3;
+  background-color: #7d7df3;
+}
+
+.enter_stages_btn_log {
+  border-top-left-radius: 0.5vw;
+  border-bottom-left-radius: 0.5vw;
+  border-right: unset;
+}
+
+.enter_stages_btn_reg {
+  border-top-right-radius: 0.5vw;
+  border-bottom-right-radius: 0.5vw;
+  border-left: unset;
+}

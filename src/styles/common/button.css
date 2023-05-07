@@ -1,0 +1,16 @@
+.reglog_button {
+  text-transform: uppercase;
+  padding: 5%;
+  background-color: #5c73df;
+  color: white;
+  border-radius: 0.5vw;
+  border: 1px solid #5c73df;
+  font-weight: 500;
+  width: 100%;
+  margin-top: 5%;
+  transition: 0.3s ease background;
+}
+.reglog_button:hover {
+  background-color: #3f5cdb;
+  border-color: #3f5cdb;
+}

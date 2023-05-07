@@ -1,0 +1,16 @@
+.block {
+  display: flex;
+  flex-direction: column;
+  backdrop-filter: blur(1vw);
+  border-radius: 1vw;
+  padding: 2vw;
+}
+
+.block_enter {
+  align-items: center;
+  width: 33vw;
+}
+
+.block_chars {
+  width: 25vw;
+}

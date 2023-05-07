@@ -1,13 +1,14 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "@Styles/normalize.css";
+import "@Styles/common/main.css";
 
 import { Chars } from "@Components/Chars";
 import { Create } from "@Components/Create";
 import { Enter } from "@Components/Enter";
+import { IStore } from "@Types/store/store";
 
 export const App = () => {
-  const stage = useSelector((state: any) => state.global.stage);
+  const stage = useSelector((state: IStore) => state.global.stage);
   const renderStage = () => {
     switch (stage) {
       case "enter":
@@ -21,5 +22,5 @@ export const App = () => {
     }
   };
 
-  return <div>{renderStage()}</div>;
+  return renderStage();
 };

@@ -1,11 +1,28 @@
-.bg-day {
-  background-image: url("../../assets/img/common/bg_day.jpg");
+.bg {
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  height: 100vh;
+}
+.bg-day {
+  background-image: -webkit-radial-gradient(
+      50% 50%,
+      circle,
+      rgba(0, 0, 0, 0),
+      rgba(0, 0, 0, 0.6)
+    ),
+    url("../../assets/img/common/bg_day.jpg"),
+    radial-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
 }
 
 .bg-night {
-  background-image: url("../../assets/img/common/bg_night.jpg");
-  background-repeat: no-repeat;
-  background-size: contain;
+  background-image: -webkit-radial-gradient(
+      50% 50%,
+      circle,
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url("../../assets/img/common/bg_night.jpg"),
+    radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }

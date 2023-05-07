@@ -7,7 +7,7 @@
       "@App/*": ["./app/*"],
       "@Store/*": ["./store/*"],
       "@Assets/*": ["./assets/*"],
-      "@Images/*": ["./assets/images/*"],
+      "@Images/*": ["./assets/img/*"],
       "@Types/*": ["./types/*"],
       "@Components/*": ["./app/components/*"],
       "@Styles/*": ["./styles/*"],

@@ -67,7 +67,7 @@ const config: Configuration = {
       "@App": path.resolve(__dirname, "src/app"),
       "@Store": path.resolve(__dirname, "src/store"),
       "@Assets": path.resolve(__dirname, "src/assets"),
-      "@Images": path.resolve(__dirname, "src/assets/images"),
+      "@Images": path.resolve(__dirname, "src/assets/img"),
       "@Types": path.resolve(__dirname, "src/types"),
       "@Components": path.resolve(__dirname, "src/app/components"),
       "@Styles": path.resolve(__dirname, "src/styles"),
