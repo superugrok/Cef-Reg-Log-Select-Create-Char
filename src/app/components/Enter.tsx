@@ -1,7 +1,7 @@
 import React, { FormEvent } from "react";
 import "@Styles/common/background.css";
 import "@Styles/enter/enter_base.css";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import { IStore } from "@Types/store/store";
 import { Logo } from "@Components/common/Logo";
@@ -9,11 +9,13 @@ import { Block } from "@Components/common/Block";
 import { Input } from "@Components/common/Input";
 import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
+import { finishEnter } from "@Store/actions/global";
 
 export const Enter = () => {
   const dayTime = useSelector((state: IStore) => state.global.time);
   const getBackground = () => (dayTime === "day" ? "bg bg-day" : "bg bg-night");
   const [stage, setStage] = React.useState<"login" | "register">("login");
+  const dispatch = useDispatch();
   // Errors states
   const [regError, setRegError] = React.useState(null);
   const [logError, setLogError] = React.useState(null);
@@ -80,7 +82,8 @@ export const Enter = () => {
     const isEmailValide = validateValue(email, "email");
     const isPassValide = validateValue(password, "password");
     isEmailValide && isPassValide
-      ? console.log("Commiting login" + email + password)
+      ? // ? console.log("Commiting login" + email + password)
+        finishEnter(email, dispatch)
       : setLogError("One or more of entered fields is incorrect");
   };
 
