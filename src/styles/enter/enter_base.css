@@ -24,6 +24,7 @@
   width: 40%;
   border: 1px solid #8f8fef;
   color: white;
+  font-size: calc(15px + 0.390625vw);
   font-weight: 500;
   padding: 3%;
   background: unset;
@@ -49,4 +50,33 @@
   border-top-right-radius: 0.5vw;
   border-bottom-right-radius: 0.5vw;
   border-left: unset;
+}
+
+@media screen and (max-width: 1300px) {
+  .enter_stages_btn {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .enter_stages_btn {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .enter_stages_btn_log {
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 7px;
+  }
+
+  .enter_stages_btn_reg {
+    border-top-right-radius: 7px;
+    border-bottom-right-radius: 7px;
+  }
+
+  .enter_stages_btn {
+    font-weight: 600;
+    font-size: 22px;
+  }
 }

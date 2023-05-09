@@ -15,3 +15,15 @@
   align-items: center;
   width: 24vw;
 }
+
+@media screen and (max-width: 768px) {
+  .block_enter {
+    width: 45vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .block_enter {
+    width: 90vw;
+  }
+}

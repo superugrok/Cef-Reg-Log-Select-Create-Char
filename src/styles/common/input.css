@@ -1,4 +1,5 @@
 .reglog_input {
+  position: relative;
   width: 65%;
   border: 1px solid white;
   background: unset;
@@ -8,6 +9,13 @@
   border-bottom-right-radius: 0.3vw;
   outline: none;
   transition: 0.5s ease border-color;
+}
+
+.reglog_input::placeholder {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
 }
 
 .reglog_input_container {
@@ -31,6 +39,10 @@
   padding: 3%;
 }
 
+.reglog_label span {
+  font-size: calc(15px + 0.390625vw);
+}
+
 .reglog_label_pass_img {
   width: 15%;
   margin-right: 10%;
@@ -38,4 +50,34 @@
 .reglog_label_email_img {
   width: 17%;
   margin-right: 10%;
+}
+
+@media screen and (max-width: 576px) {
+  .reglog_input {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+  }
+
+  .reglog_input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  .reglog_label {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+  }
+
+  .reglog_label span {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .reglog_input::placeholder {
+    font-size: 12px;
+  }
+
+  .reglog_label span {
+    font-size: 12px;
+  }
 }

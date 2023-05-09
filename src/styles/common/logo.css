@@ -7,3 +7,9 @@
   width: 21vw;
   margin-bottom: 4%;
 }
+
+@media screen and (max-width: 576px) {
+  .logo_enter {
+    width: 45vw;
+  }
+}
