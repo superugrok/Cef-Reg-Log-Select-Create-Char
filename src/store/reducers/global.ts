@@ -4,6 +4,9 @@ import { getLocalTime } from "@Utils/getLocalTime";
 import { ICharsList } from "components/enter/login";
 
 const initialState: IGlobalReducer = {
+  // Debug mode
+  debugMode: true,
+  // Regular state
   stage: "enter",
   playerInfo: {
     charPrice: 0,

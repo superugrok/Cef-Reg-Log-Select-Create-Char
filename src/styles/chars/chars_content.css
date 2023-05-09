@@ -8,13 +8,41 @@
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-bottom: 12%;
 }
 
 .chars_content_cash_section {
   display: flex;
-  width: 30%;
+  width: 40%;
   justify-content: space-around;
   align-items: center;
   color: white;
   font-weight: bold;
+}
+
+.chars_content_info_section {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  color: white;
+  margin-bottom: 3%;
+  font-size: 1rem;
+}
+
+.char_info_section_line {
+  background-color: white;
+  flex-grow: 1;
+  opacity: 0.3;
+  height: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+  margin-top: 2%;
+}
+.char_info_section_line_right {
+  background-color: white;
+  opacity: 0.3;
+  height: 1%;
+  width: 4%;
+  margin-left: 1%;
+  margin-top: 2%;
 }

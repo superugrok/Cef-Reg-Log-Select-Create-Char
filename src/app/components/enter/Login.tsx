@@ -3,13 +3,14 @@ import { Input } from "@Components/common/Input";
 import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
 import { finishEnter } from "@Store/actions/global";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { validateValue } from "@Utils/validatePassEmail";
 import { ICharsList, ILoginProps } from "@Types/components/enter/login";
+import { IStore } from "@Types/store/store";
 
 export const Login = ({ stage }: ILoginProps) => {
   // Debug mode!
-  const debugMode = true;
+  const debugMode = useSelector((state: IStore) => state.global.debugMode);
 
   const dispatch = useDispatch();
   // Error state
@@ -23,7 +24,7 @@ export const Login = ({ stage }: ILoginProps) => {
     const dummyPlayer1 = {
       charName: "Paul Don",
       personalMoney: 2500,
-      bankMoney: 3000,
+      bankMoney: 300000,
       job: "Police",
       level: 5,
       faction: "Ballas gang",
