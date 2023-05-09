@@ -42,6 +42,12 @@ export const Register = ({ stage }: IRegisterProps) => {
       : identifyError();
   };
 
+  // *** Window funcs ***
+  // @ts-ignore
+  window.setRegisterError = (error: string) => {
+    setRegError(error);
+  };
+
   return (
     <form
       className="enter_form_container"

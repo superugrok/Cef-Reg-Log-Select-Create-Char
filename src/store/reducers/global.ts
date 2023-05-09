@@ -1,10 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { IGlobalReducer } from "@Types/store/store";
 import { getLocalTime } from "@Utils/getLocalTime";
+import { ICharsList } from "components/enter/login";
 
 const initialState: IGlobalReducer = {
   stage: "enter",
-  email: null,
+  playerInfo: {
+    charPrice: 0,
+    email: null,
+    charsInfo: [],
+  },
   time: getLocalTime(),
 };
 
@@ -18,9 +23,18 @@ export const globalReducer = createSlice({
     ) {
       state.stage = action.payload;
     },
-    FINISH_ENTER(state, action: PayloadAction<string>) {
+    FINISH_ENTER(
+      state,
+      action: PayloadAction<{
+        email: string;
+        chars: ICharsList[];
+        price: number;
+      }>
+    ) {
       state.stage = "chars";
-      state.email = action.payload;
+      state.playerInfo.email = action.payload.email;
+      state.playerInfo.charPrice = action.payload.price;
+      state.playerInfo.charsInfo = action.payload.chars;
     },
   },
 });

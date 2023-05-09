@@ -5,9 +5,12 @@ import { Error } from "@Components/common/Error";
 import { finishEnter } from "@Store/actions/global";
 import { useDispatch } from "react-redux";
 import { validateValue } from "@Utils/validatePassEmail";
-import { ILoginProps } from "@Types/components/enter/login";
+import { ICharsList, ILoginProps } from "@Types/components/enter/login";
 
 export const Login = ({ stage }: ILoginProps) => {
+  // Debug mode!
+  const debugMode = true;
+
   const dispatch = useDispatch();
   // Error state
   const [logError, setLogError] = React.useState(null);
@@ -15,15 +18,57 @@ export const Login = ({ stage }: ILoginProps) => {
   const emailLogRef = React.useRef(null);
   const passLogRef = React.useRef(null);
 
+  const debugLogin = () => {
+    const email = "debug@google.com";
+    const dummyPlayer1 = {
+      charName: "Paul Don",
+      personalMoney: 2500,
+      bankMoney: 3000,
+      job: "Police",
+      level: 5,
+      faction: "Ballas gang",
+      lastSeen: "25/7/2004",
+    };
+    const dummyPlayer2 = {
+      charName: "Paul Don",
+      personalMoney: 2500,
+      bankMoney: 3000,
+      job: "Police",
+      level: 5,
+      faction: "Ballas gang",
+      lastSeen: "25/7/2004",
+    };
+    const priceToOpen = 2500;
+    const chars: ICharsList[] = [dummyPlayer1, null];
+    finishEnter(email, chars, priceToOpen, dispatch);
+  };
+
   const login = () => {
     const email = emailLogRef.current.value.trim();
     const password = passLogRef.current.value.trim();
     const isEmailValide = validateValue(email, "email");
     const isPassValide = validateValue(password, "password");
-    isEmailValide && isPassValide
-      ? // ? console.log("Commiting login" + email + password)
-        finishEnter(email, dispatch)
+
+    (isEmailValide && isPassValide) || debugMode
+      ? debugMode
+        ? debugLogin()
+        : console.log("Commiting login" + email + password)
       : setLogError("One or more of entered fields is incorrect");
+  };
+
+  // *** Window funcs ***
+  // @ts-ignore
+  window.loginComplite = (
+    email: string,
+    jsonChars: string,
+    priceToBuy: number
+  ) => {
+    const chars: ICharsList[] = JSON.parse(jsonChars);
+    finishEnter(email, chars, priceToBuy, dispatch);
+  };
+  // @ts-ignore
+  window.setLoginError = (error: string) => {
+    setLogError(error);
   };
 
   return (
