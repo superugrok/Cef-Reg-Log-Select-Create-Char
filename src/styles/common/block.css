@@ -17,6 +17,14 @@
   width: 24vw;
 }
 
+.block_create {
+  align-items: center;
+  width: 20vw;
+  height: 85%;
+  margin-right: 3%;
+  margin-top: 3%;
+}
+
 @media screen and (max-width: 1240px) {
   .block_chars {
     width: 34vw;
@@ -30,7 +38,8 @@
 }
 
 @media screen and (max-width: 576px) {
-  .block_enter, .block_chars {
+  .block_enter,
+  .block_chars {
     width: 90vw;
   }
 
