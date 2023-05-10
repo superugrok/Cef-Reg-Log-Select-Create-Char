@@ -1,11 +1,12 @@
 import * as React from "react";
 // import { changeRangeValueItem } from "@utils/windowFuncs/stores/hairdresserShop/hairdresserShopWindowFuncs";
 import { useDispatch, useSelector } from "react-redux";
+import { IStore } from "@Types/store/store";
 
 export const SwitchRange = (props: any): JSX.Element => {
   const dispatch = useDispatch();
   const value = useSelector(
-    (state: any) => state.hairdresserShop.apparence[props.type]
+    (state: IStore) => state.create.apparence[props.type]
   );
   let ran: boolean = props.range;
 
