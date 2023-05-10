@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 576px) {
-  .logo_enter {
+  .logo_enter, .logo_chars {
     width: 45vw;
   }
 }

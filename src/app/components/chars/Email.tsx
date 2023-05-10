@@ -1,9 +1,16 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { IStore } from "@Types/store/store";
+import "@Styles/common/email.css";
 
 export const Email = () => {
   const email = useSelector((state: IStore) => state.global.playerInfo.email);
 
-  return <div>{email}</div>;
+  return (
+    <>
+      <div className="email_block_wrapper">
+        <p className="email_block_email">{email}</p>
+      </div>
+    </>
+  );
 };

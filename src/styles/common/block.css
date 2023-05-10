@@ -2,6 +2,7 @@
   display: flex;
   flex-direction: column;
   backdrop-filter: blur(1vw);
+  -webkit-backdrop-filter: blur(1vw);
   border-radius: 1vw;
   padding: 2vw;
 }
@@ -16,6 +17,12 @@
   width: 24vw;
 }
 
+@media screen and (max-width: 1240px) {
+  .block_chars {
+    width: 34vw;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .block_enter {
     width: 45vw;
@@ -23,7 +30,11 @@
 }
 
 @media screen and (max-width: 576px) {
-  .block_enter {
+  .block_enter, .block_chars {
     width: 90vw;
+  }
+
+  .block_chars {
+    margin-bottom: 4%;
   }
 }

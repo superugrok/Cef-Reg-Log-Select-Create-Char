@@ -29,3 +29,10 @@ body {
   opacity: 0;
   transition: 0.3s ease opacity;
 }
+
+@media screen and (max-width: 576px) {
+  body {
+    overflow: auto;
+    background-size: contain;
+  }
+}

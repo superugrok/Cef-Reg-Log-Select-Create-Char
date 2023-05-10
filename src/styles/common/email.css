@@ -1,0 +1,33 @@
+.email_block_wrapper {
+  position: relative;
+  text-align: right;
+}
+
+.email_block_wrapper::before {
+  content: "";
+  position: absolute;
+  right: -36px;
+  bottom: -16px;
+  width: 203px;
+  height: 40px;
+  background-image: url('../../assets/img/common/line_email.png');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.email_block_email {
+  margin: 0;
+  font-size: calc(10px + 0.390625vw);
+  color: #d5d8e0;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .email_block_wrapper::before {
+    right: -30px;
+    bottom: -11px;
+    width: 140px;
+    height: 30px;
+  }
+}
