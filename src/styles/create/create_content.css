@@ -3,7 +3,7 @@
   background-color: #3e3e3e;
   border: none;
   color: white;
-  font-size: calc(12px + 0.390625vw);
+  font-size: calc(10px + 0.390625vw);
   transition: .3s ease background;
 }
 
