@@ -22,6 +22,12 @@
   border: 1px solid #327dc3;
   background-color: #327dc3;
 }
+.text_title {
+  margin-top: 15px;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
 
 .choise_section {
   overflow-y: auto;
@@ -308,6 +314,10 @@ details summary::-webkit-details-marker {
     padding-right: 25px;
     background-size: 2vh;
     background-position: 12px;
+  }
+  .text_title {
+    margin-top: 20px;
+    font-size: 1.7rem;
   }
   .choise_section {
     margin-top: 50px;
