@@ -52,8 +52,9 @@
   flex-grow: 1;
   font-size: calc(10px + 0.390625vw);
   font-weight: 600;
-  color: white;
+  color: #cec8c8;
   text-align: center;
+  line-height: 150%;
 }
 
 .chars_content_price_inner {

@@ -7,10 +7,10 @@ export const Email = () => {
   const email = useSelector((state: IStore) => state.global.playerInfo.email);
 
   return (
-    <>
+    <div>
       <div className="email_block_wrapper">
         <p className="email_block_email">{email}</p>
       </div>
-    </>
+    </div>
   );
 };
