@@ -1,4 +1,5 @@
 import { ICharsList } from "components/enter/login";
+import { ICreateReducer } from "./create";
 
 export interface IGlobalReducer {
   debugMode: boolean;
@@ -13,4 +14,5 @@ export interface IGlobalReducer {
 
 export interface IStore {
   global: IGlobalReducer;
+  create: ICreateReducer;
 }

@@ -66,9 +66,26 @@ export const Apparence = ({ stage }: ICreateSectionProps) => {
     },
   ];
 
+  const buildElements = () =>
+    elements.map((element, i) => (
+      <details onClick={(event: any) => checkOpen(event)} key={i}>
+        <summary className="details_hover">
+          {element.category}
+          <div className="details_igul"></div>
+          <div className="details_status"></div>
+        </summary>
+        {element.content.map((content, i) => (
+          <div key={i}>
+            <span className="text_title">{content.title}</span>
+            {content.element}
+          </div>
+        ))}
+      </details>
+    ));
+
   return (
     <div style={{ display: stage == "apparence" ? "initial" : "none" }}>
-      Apparence
+      {buildElements()}
     </div>
   );
 };
