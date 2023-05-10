@@ -24,20 +24,20 @@ export const Login = ({ stage }: ILoginProps) => {
     const dummyPlayer1 = {
       charName: "Paul Don",
       personalMoney: 2500,
-      bankMoney: 300000,
+      bankMoney: 1999,
       job: "Police",
       level: 5,
       faction: "Ballas gang",
       lastSeen: "25/7/2004",
     };
     const dummyPlayer2 = {
-      charName: "Paul Don",
+      charName: "Paul Markov",
       personalMoney: 2500,
-      bankMoney: 3000,
-      job: "Police",
-      level: 5,
-      faction: "Ballas gang",
-      lastSeen: "25/7/2004",
+      bankMoney: 1000,
+      job: "FBI",
+      level: 2,
+      faction: "Groove street",
+      lastSeen: "05/2/2002",
     };
     const priceToOpen = 2500;
     const chars: ICharsList[] = [dummyPlayer1, null];

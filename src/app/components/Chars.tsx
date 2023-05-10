@@ -17,7 +17,7 @@ export const Chars = () => {
   );
   const blocks = chars.map((char, i) => (
     <Block key={i} stage="chars">
-      <CharBlock isFirst={!Boolean(i)} char={char} />
+      <CharBlock index={i} char={char} />
     </Block>
   ));
 

@@ -1,19 +1,27 @@
 import React from "react";
+import { ICharToBuyProps } from "@Types/components/chars/charContent";
 
-export const ContentToBuy = () => {
-  const price = 1000;
+export const ContentToBuy = ({ charCost, index }: ICharToBuyProps) => {
   return (
     <div className="chars_content_container">
       <span className="chars_content_description">
-        When buying slots, you get forever, in it you can create new character.
+        After buying the slot, it will be yours for lifetime. You can create an
+        new character.
       </span>
       <div className="chars_content_price_inner">
         <div className="chars_content_price_wrapper">
           <div className="chars_content_price_line"></div>
-          <p className="chars_content_price_title">Cost: ${price}</p>
+          <p className="chars_content_price_title">
+            Cost: ${charCost || "Free"}
+          </p>
           <div className="chars_content_price_line"></div>
         </div>
-        <p className="chars_content_price_bonus">VIP Gold Bonus for 1 month</p>
+        <p
+          style={{ opacity: index ? 1 : 0 }}
+          className="chars_content_price_bonus"
+        >
+          VIP Gold Bonus for 1 month
+        </p>
       </div>
     </div>
   );

@@ -1,7 +1,7 @@
 import { ICharsList } from "components/enter/login";
 
 export interface ICharBlockProps {
-  isFirst: boolean;
+  index: number;
   char: ICharsList;
 }
 

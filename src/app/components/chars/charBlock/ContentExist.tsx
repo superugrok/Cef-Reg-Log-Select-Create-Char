@@ -25,8 +25,8 @@ export const ContentExist = ({ char }: ICharExistProps) => {
       value: char.lastSeen,
     },
   ];
-  const charInfo = charData.map((data) => (
-    <div className="chars_content_info_section">
+  const charInfo = charData.map((data, i) => (
+    <div className="chars_content_info_section" key={i}>
       <span>{data.title}</span>
       <div className="char_info_section_line"></div>
       <span>{data.value}</span>
