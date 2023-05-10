@@ -22,4 +22,36 @@
 .create_content_container {
   width: 100%;
   height: 90%;
+  overflow: auto;
+}
+
+.create_content_container {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 65vh;
+}
+
+.create_content_container::-webkit-scrollbar-track {
+  border-radius: 4px;
+}
+.create_content_container::-webkit-scrollbar {
+  width: 2px;
+}
+.create_content_container::-webkit-scrollbar-thumb {
+  border-radius: 4px;
+  background: #f0f2f5;
+  display: none;
+}
+.create_content_container:hover::-webkit-scrollbar-thumb {
+  background: #6a7d9b;
+  display: block;
+  background-image: url("../../assets/img/create/scroll.png");
+  background-repeat: repeat;
+}
+
+@media screen and (max-width: 576px) {
+  .create_debug_container {
+    justify-content: center;
+    min-height: 100%;
+  }
 }

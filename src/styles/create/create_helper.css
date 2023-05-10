@@ -57,20 +57,9 @@
 
 /* Details style */
 details {
-  position: relative;
   margin-bottom: 3%;
   border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
-/* details::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 1.5%;
-  width: calc(100% - 7%);
-  height: 1px;
-  background-color: rgba(255, 255, 255, 0.75);
-  transform: translateX(-50%);
-} */
 .details_hover {
   position: relative;
   overflow: hidden;
@@ -88,6 +77,7 @@ details {
   font-size: 0.8rem;
   font-weight: bold;
 }
+
 details summary::-webkit-details-marker,
 details summary::marker {
   display: none; 
@@ -113,7 +103,7 @@ details summary::marker {
   background-repeat: no-repeat;
   border-left: 1px solid rgba(255, 255, 255, 0.75);
   width: 30px;
-  height: 30px;
+  height: 100%;
 }
 .details_line {
   height: 1px;
@@ -379,5 +369,19 @@ details summary::marker {
     background-size: 1vh;
     width: 1.5vw;
     height: 3vh;
+  }
+}
+
+@media screen and (min-width: 1940px) {
+  .text_title {
+    font-size: 1.1rem;
+  }
+  .details_hover {
+    height: 40px;
+    font-size: 1.2rem;
+    line-height: 37px;
+  }
+  .switch_content {
+    font-size: 1.3rem;
   }
 }
