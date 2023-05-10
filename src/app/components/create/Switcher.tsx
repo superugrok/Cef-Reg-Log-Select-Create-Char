@@ -20,6 +20,7 @@ import {
 // import { changeRangeValueItem } from "../../../../../utils/windowFuncs/stores/hairdresserShop/hairdresserShopWindowFuncs";
 import { useSelector, useDispatch } from "react-redux";
 import { IStore } from "@Types/store/store";
+import { changeValue } from "@Store/actions/create";
 
 export const Switcher = (props: any) => {
   const dispatch = useDispatch();
@@ -65,10 +66,6 @@ export const Switcher = (props: any) => {
     return act ? mathVar["+"](index, 1) : mathVar["-"](index, 1);
   }; // Математика как переменная
 
-  const changeRangeValueItem = (dispatch, some) => {
-    return;
-  };
-
   // Switch forward and back actions
   const switchData = (move: boolean): void => {
     let element: any = document.getElementById(props.type);
@@ -76,7 +73,7 @@ export const Switcher = (props: any) => {
     let member: any = dic[getMath(move, index)];
     if (member) {
       // Check if next member exist
-      changeRangeValueItem(dispatch, {
+      changeValue(dispatch, {
         value: member,
         type: props.type,
         translation: props.translation,

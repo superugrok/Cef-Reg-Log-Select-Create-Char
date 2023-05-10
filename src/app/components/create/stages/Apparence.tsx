@@ -56,7 +56,7 @@ export const Apparence = ({ stage }: ICreateSectionProps) => {
       content: [
         {
           title: "Тип глаз",
-          element: <SwitchRange type="eyes" />,
+          element: <SwitchRange range={true} type="eyes" />,
         },
         {
           title: "Цвет глаз",

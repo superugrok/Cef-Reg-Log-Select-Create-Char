@@ -2,6 +2,7 @@ import * as React from "react";
 // import { changeRangeValueItem } from "@utils/windowFuncs/stores/hairdresserShop/hairdresserShopWindowFuncs";
 import { useDispatch, useSelector } from "react-redux";
 import { IStore } from "@Types/store/store";
+import { changeValue } from "@Store/actions/create";
 
 export const SwitchRange = (props: any): JSX.Element => {
   const dispatch = useDispatch();
@@ -10,12 +11,8 @@ export const SwitchRange = (props: any): JSX.Element => {
   );
   let ran: boolean = props.range;
 
-  const changeRangeValueItem = (dispatch, some) => {
-    return;
-  };
-
   const changeRange = (value: number, type: string, translation: string) => {
-    changeRangeValueItem(dispatch, { value, type, translation });
+    changeValue(dispatch, { value, type, translation });
   };
 
   return (
