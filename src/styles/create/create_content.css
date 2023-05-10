@@ -1,9 +1,9 @@
 .create_content_btn {
   padding: 3% 4%;
-  background-color: #3e3e3e;
+  background-color: #323439;
   border: none;
   color: white;
-  font-size: calc(12px + 0.390625vw);
+  font-size: calc(10px + 0.390625vw);
   transition: .3s ease background;
 }
 
@@ -29,4 +29,22 @@
 
 .create_content_image {
   margin-bottom: 2%;
+}
+
+@media screen and (min-width: 1940px) {
+  .create_content_btn {
+    font-size: calc(14px + 0.390625vw);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .create_content_btn:first-child {
+    border-top-left-radius: 1.5vw;
+    border-bottom-left-radius: 1.5vw;
+  }
+
+  .create_content_btn:last-child {
+    border-top-right-radius: 1.5vw;
+    border-bottom-right-radius: 1.5vw;
+  }
 }

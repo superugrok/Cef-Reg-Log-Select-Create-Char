@@ -19,14 +19,19 @@
 
 .block_create {
   align-items: center;
-  width: 20vw;
+  width: 25vw;
   height: 85%;
   margin-right: 3%;
   margin-top: 3%;
+  background-color: rgb(91 91 91 / 70%);
 }
 
 @media screen and (max-width: 1240px) {
   .block_chars {
+    width: 34vw;
+  }
+
+  .block_create {
     width: 34vw;
   }
 }
@@ -35,15 +40,24 @@
   .block_enter {
     width: 45vw;
   }
+
+  .block_create {
+    width: 40vw;
+  }
 }
 
 @media screen and (max-width: 576px) {
   .block_enter,
-  .block_chars {
+  .block_chars,
+  .block_create {
     width: 90vw;
   }
 
   .block_chars {
     margin-bottom: 4%;
+  }
+
+  .block_create {
+    margin-right: 0;
   }
 }

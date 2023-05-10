@@ -5,8 +5,11 @@
   background: unset;
   color: white;
   padding: 3%;
+  border-left: none;
   border-top-right-radius: 0.3vw;
   border-bottom-right-radius: 0.3vw;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
   outline: none;
   transition: 0.5s ease border-color;
 }

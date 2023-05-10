@@ -23,10 +23,12 @@
   background-color: #327dc3;
 }
 .text_title {
-  margin-top: 15px;
-  color: white;
+  color: rgb(255 255 255 / 75%);
   font-size: 0.9rem;
   font-weight: 600;
+  text-align: center;
+  display: block;
+  margin-top: 2%;
 }
 
 .choise_section {
@@ -54,39 +56,44 @@
 }
 
 /* Details style */
-details summary::-webkit-details-marker {
-  display: none;
+details {
+  margin-bottom: 3%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.75);
 }
-/*details summary:before {
-    content: '+';
-    margin-right: 7px;
-  }
-  details[open] summary:before {
-    content: '-';
-  }*/
 .details_hover {
+  position: relative;
   overflow: hidden;
   outline: none;
   margin: 0 auto;
-  margin-top: 3%;
+  margin-bottom: 3%;
   background-color: rgba(255, 255, 255, 0.1);
   cursor: pointer;
   padding-left: 3%;
-  width: 93%;
+  width: 100%;
   border-radius: 7px;
   height: 30px;
+  color: white;
   line-height: 30px;
   font-size: 0.8rem;
   font-weight: bold;
 }
+
+details summary::-webkit-details-marker,
+details summary::marker {
+  display: none; 
+  content: "";
+}
 .details_igul {
+  position: absolute;
   background-image: url("../../assets/img/create/igul.png");
   background-repeat: no-repeat;
   display: inline-block;
+  top: 50%;
   width: 4px;
   height: 4px;
   margin-left: 10px;
   padding-bottom: 2px;
+  transform: translateY(-50%);
 }
 .details_status {
   background-color: rgba(255, 255, 255, 0.1);
@@ -94,9 +101,9 @@ details summary::-webkit-details-marker {
   background-image: url("../../assets/img/create/down.png");
   background-position: center;
   background-repeat: no-repeat;
-  border-left: 1px solid black;
+  border-left: 1px solid rgba(255, 255, 255, 0.75);
   width: 30px;
-  height: 30px;
+  height: 100%;
 }
 .details_line {
   height: 1px;
@@ -123,6 +130,7 @@ details summary::-webkit-details-marker {
   height: 52px;
   margin: 0 auto;
   margin-top: 3%;
+  margin-bottom: 3%;
   text-align: center;
   line-height: 52px;
   font-weight: 600;
@@ -146,6 +154,7 @@ details summary::-webkit-details-marker {
 }
 .switch_content {
   margin: 0 auto;
+  color: white;
 }
 
 /* Switch Range styles */
@@ -360,5 +369,19 @@ details summary::-webkit-details-marker {
     background-size: 1vh;
     width: 1.5vw;
     height: 3vh;
+  }
+}
+
+@media screen and (min-width: 1940px) {
+  .text_title {
+    font-size: 1.1rem;
+  }
+  .details_hover {
+    height: 40px;
+    font-size: 1.2rem;
+    line-height: 37px;
+  }
+  .switch_content {
+    font-size: 1.3rem;
   }
 }

@@ -29,6 +29,6 @@
 
 @media screen and (max-width: 576px) {
   .bg {
-    height: auto;
+    /* height: auto; */
   }
 }
