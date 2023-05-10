@@ -17,7 +17,6 @@ export const SwitchRange = (props: any): JSX.Element => {
 
   return (
     <>
-      <p className="switch_title">Title</p>
       <div className="switch_wrapper">
         <input
           type="range"

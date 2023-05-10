@@ -84,7 +84,6 @@ export const Switcher = (props: any) => {
   // Render
   return (
     <>
-      <p className="switch_title">Title</p>
       <div className="switch_wrapper">
         <div
           className="switch_btn switch_left"
