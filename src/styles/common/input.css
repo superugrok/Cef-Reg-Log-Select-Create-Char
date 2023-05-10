@@ -40,7 +40,7 @@
 }
 
 .reglog_label span {
-  font-size: calc(15px + 0.390625vw);
+  font-size: calc(12px + 0.390625vw);
 }
 
 .reglog_label_pass_img {

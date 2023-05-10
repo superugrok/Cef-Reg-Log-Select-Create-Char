@@ -26,3 +26,9 @@
     url("../../assets/img/common/bg_night.jpg"),
     radial-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3));
 }
+
+@media screen and (max-width: 576px) {
+  .bg {
+    height: auto;
+  }
+}

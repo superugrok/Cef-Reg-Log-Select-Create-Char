@@ -32,7 +32,7 @@
   .reglog_button {
     padding: 4%;
     font-weight: 600;
-    font-size: 24px;
+    font-size: calc(18px + 0.390625vw);
     border-radius: 7px;
   }
 }
