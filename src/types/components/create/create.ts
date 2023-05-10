@@ -4,4 +4,5 @@ export interface ICreateSectionProps {
 
 export interface IStagesProps {
   setStage: Function;
+  stage: string;
 }

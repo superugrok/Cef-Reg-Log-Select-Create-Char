@@ -21,7 +21,7 @@ export const Create = () => {
   return (
     <div className={debugMode ? "create_debug_container" : "create_container"}>
       <Block stage="create">
-        <Stages setStage={setStage} />
+        <Stages setStage={setStage} stage={stage} />
         <div className="create_content_container">
           <Parents stage={stage} />
           <Apparence stage={stage} />
