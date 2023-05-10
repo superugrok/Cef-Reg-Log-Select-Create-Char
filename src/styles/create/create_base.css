@@ -28,7 +28,6 @@
 .create_content_container {
   overflow-y: auto;
   overflow-x: hidden;
-  height: 65vh;
 }
 
 .create_content_container::-webkit-scrollbar-track {
