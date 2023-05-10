@@ -5,8 +5,9 @@ export const ContentToBuy = ({ charCost, index }: ICharToBuyProps) => {
   return (
     <div className="chars_content_container">
       <span className="chars_content_description">
-        After buying the slot, it will be yours for lifetime. You can create an
-        new character.
+        {`Slot for new Character. ${
+          index ? "Money will be withdrawn from the 1st char bank" : ""
+        }`}
       </span>
       <div className="chars_content_price_inner">
         <div className="chars_content_price_wrapper">
