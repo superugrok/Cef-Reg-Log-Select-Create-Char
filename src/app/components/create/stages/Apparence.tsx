@@ -2,6 +2,7 @@ import React from "react";
 import { ICreateSectionProps } from "@Types/components/create/create";
 import { Switcher } from "../Switcher";
 import { SwitchRange } from "../SwitchRange";
+import { elements } from "../dictionaries/apparenceList";
 
 export const Apparence = ({ stage }: ICreateSectionProps) => {
   const checkOpen = (event: any) => {
@@ -36,35 +37,6 @@ export const Apparence = ({ stage }: ICreateSectionProps) => {
       .querySelectorAll(".choise_section > details")
       .forEach((el) => observer.observe(el, config));
   };
-
-  const elements = [
-    {
-      category: "Причёска",
-      content: [
-        {
-          title: "Причёска",
-          element: <Switcher type="hair" />,
-        },
-        {
-          title: "Цвет волос",
-          element: <Switcher type="hairColor" />,
-        },
-      ],
-    },
-    {
-      category: "Глаза",
-      content: [
-        {
-          title: "Тип глаз",
-          element: <SwitchRange range={true} type="eyes" />,
-        },
-        {
-          title: "Цвет глаз",
-          element: <Switcher type="eyesColor" />,
-        },
-      ],
-    },
-  ];
 
   const buildElements = () =>
     elements.map((element, i) => (
