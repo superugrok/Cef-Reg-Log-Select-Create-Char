@@ -1,25 +1,8 @@
 import React from "react";
 import { queryGen } from "@Utils/create/queryGen";
 
-import { parentsFeDic, parentsMaDic } from "./dictionaries/parentsDic";
-import {
-  beards,
-  brows,
-  hairGrud,
-  older,
-  deffects,
-  hairsMale,
-  hairsFemale,
-  hairColor,
-  eyeColor,
-  pomada,
-  cosmetics,
-  rumyan,
-  zagar,
-  vesnushki,
-  faceColor,
-  colorsList,
-} from "./dictionaries/apparenceDic";
+import { parentsList } from "./dictionaries/parentsDic";
+import { list } from "./dictionaries/apparenceDic";
 
 export const Random = (props: any) => {
   const getRandomFloat = (min: number, max: number) => {
@@ -92,8 +75,8 @@ export const Random = (props: any) => {
     let createStates = {
       parents: {
         gender: props.all.parents.gender,
-        mother: parentsFeDic[ranObj.Mother - 21],
-        father: parentsMaDic[ranObj.Father],
+        mother: parentsList.parentsFeDic[ranObj.Mother - 21],
+        father: parentsList.parentsMaDic[ranObj.Father],
       },
       ressemblance: {
         resValue: ranObj.Resemblance,
@@ -103,17 +86,17 @@ export const Random = (props: any) => {
         // Причёска
         hair:
           props.all.parents.gender == "Мужской"
-            ? hairsMale[ranObj.Hair]
-            : hairsFemale[ranObj.Hair],
-        hairColor: hairColor[ranObj.HairColor],
+            ? list.hairsMale[ranObj.Hair]
+            : list.hairsFemale[ranObj.Hair],
+        hairColor: list.hairColor[ranObj.HairColor],
         // Глаза
         eyes: ranObj.Eyes,
-        eyesColor: eyeColor[ranObj.EyeColor],
+        eyesColor: list.eyeColor[ranObj.EyeColor],
         // Брови
-        brows: brows[ranObj.Eyebrows],
+        brows: list.brows[ranObj.Eyebrows],
         browsHeight: ranObj.BrowHeight,
         browsWidth: ranObj.BrowWidth,
-        browsColor: colorsList[ranObj.EyebrowColor],
+        browsColor: list.colorsList[ranObj.EyebrowColor],
         browsTp: ranObj.EyebrowsOpacity,
         // Нос и переносица
         noseWidth: ranObj.NoseWidth,
@@ -134,32 +117,32 @@ export const Random = (props: any) => {
         neckWidth: ranObj.NeckWidth, // Ширина шеи
         // Губы
         lips: ranObj.Lips, // Тип губ
-        lipsColor: colorsList[ranObj.LipstickColor],
-        pomada: pomada[ranObj.Lipstick],
+        lipsColor: list.colorsList[ranObj.LipstickColor],
+        pomada: list.pomada[ranObj.Lipstick],
         pomadaTp: ranObj.LipstickOpacity,
         // Борода
-        beard: beards[ranObj.FacialHair],
-        beardColor: colorsList[ranObj.BeardColor],
+        beard: list.beards[ranObj.FacialHair],
+        beardColor: list.colorsList[ranObj.BeardColor],
         beardTp: ranObj.FacialHairOpacity,
         // Приметы
-        faceColor: faceColor[ranObj.Complexion],
+        faceColor: list.faceColor[ranObj.Complexion],
         faceColorTp: ranObj.ComplexionOpacity,
-        hairGrud: hairGrud[ranObj.ChestHair],
-        hairGrudColor: colorsList[ranObj.ChestHairColor],
+        hairGrud: list.hairGrud[ranObj.ChestHair],
+        hairGrudColor: list.colorsList[ranObj.ChestHairColor],
         hairGrudTp: ranObj.ChestHairOpacity,
-        older: older[ranObj.Ageing],
+        older: list.older[ranObj.Ageing],
         olderTp: ranObj.AgeingOpacity,
-        deffects: deffects[ranObj.Blemishes],
+        deffects: list.deffects[ranObj.Blemishes],
         deffectsTp: ranObj.BlemishesOpacity,
         // Особенности
-        cosmetics: cosmetics[ranObj.Makeup],
+        cosmetics: list.cosmetics[ranObj.Makeup],
         cosmeticsTp: ranObj.MakeupOpacity,
-        rumyan: rumyan[ranObj.Blush],
-        rumyanColor: colorsList[ranObj.BlushColor],
+        rumyan: list.rumyan[ranObj.Blush],
+        rumyanColor: list.colorsList[ranObj.BlushColor],
         rumyanTp: ranObj.BlushOpacity,
-        zagar: zagar[ranObj.Sundamage],
+        zagar: list.zagar[ranObj.Sundamage],
         zagarTp: ranObj.SundamageOpacity,
-        rodinki: vesnushki[ranObj.Freckles],
+        rodinki: list.vesnushki[ranObj.Freckles],
         rodinkiTp: ranObj.FrecklesOpacity,
       },
     };

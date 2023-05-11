@@ -1,6 +1,9 @@
 interface IElementContent {
   title: string;
-  element: JSX.Element;
+  element?: JSX.Element;
+  elementType?: "Switcher" | "SwitchRange";
+  type?: string;
+  range?: boolean;
 }
 
 export interface IElements {

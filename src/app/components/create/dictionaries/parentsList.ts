@@ -1,6 +1,3 @@
-import React from "react";
-import { Switcher } from "../Switcher";
-import { SwitchRange } from "../SwitchRange";
 import { IElements } from "@Types/components/create/elements";
 
 export const elements: IElements[] = [
@@ -9,15 +6,18 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Gender",
-        element: <Switcher type="gender" />,
+        elementType: "Switcher",
+        type: "gender",
       },
       {
         title: "Mother",
-        element: <Switcher type="mother" />,
+        elementType: "Switcher",
+        type: "mother",
       },
       {
         title: "Father",
-        element: <Switcher type="father" />,
+        elementType: "Switcher",
+        type: "father",
       },
     ],
   },
@@ -26,7 +26,9 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Skin tone",
-        element: <SwitchRange range={false} type="skinValue" />,
+        range: true,
+        elementType: "SwitchRange",
+        type: "skinValue",
       },
     ],
   },
@@ -35,7 +37,9 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Similarity",
-        element: <SwitchRange range={false} type="resValue" />,
+        range: true,
+        elementType: "SwitchRange",
+        type: "resValue",
       },
     ],
   },

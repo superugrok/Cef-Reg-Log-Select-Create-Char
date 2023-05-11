@@ -1,9 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { ICreateReducer } from "@Types/store/create";
-import { getLocalTime } from "@Utils/getLocalTime";
-import { ICharsList } from "components/enter/login";
+import { ICreateChangeValue } from "@Types/components/create/create";
 
 const initialState: ICreateReducer = {
+  parents: {
+    gender: "male",
+    father: "Adrian",
+    mother: "Amelia",
+    skinValue: 50,
+    resValue: 50,
+  },
   apparence: {
     // Причёска
     hair: "Стандарт",
@@ -64,14 +70,15 @@ const initialState: ICreateReducer = {
     rodinki: "Стандарт",
     rodinkiTp: -1,
   },
+  clothing: {},
 };
 
 export const createReducer = createSlice({
   name: "CREATE",
   initialState,
   reducers: {
-    CHANGE_VALUE(state, action: PayloadAction<any>) {
-      state.apparence[action.payload.type] = action.payload.value;
+    CHANGE_VALUE(state, action: PayloadAction<ICreateChangeValue>) {
+      state[action.payload.stage][action.payload.type] = action.payload.value;
     },
   },
 });

@@ -1,9 +1,9 @@
-export const colorsList: string[] = []; // Временно! Позже заменить на нормальные названия!
+const colorsList: string[] = []; // Временно! Позже заменить на нормальные названия!
 for (let i = 1; i < 65; i++) colorsList.push(`${i}`);
-export const colorsListId: number[] = [];
+const colorsListId: number[] = [];
 for (let i = 0; i < colorsList.length; i++) colorsListId.push(i);
 
-export const deffects = [
+const deffects = [
   "Стандарт",
   "Корь",
   "Цыпки",
@@ -30,10 +30,10 @@ export const deffects = [
   "Герпес",
   "Импетиго", // 25
 ]; // Деффекты
-export const deffectsId: number[] = [];
+const deffectsId: number[] = [];
 for (let i = 0; i < deffects.length; i++) deffectsId.push(i);
 
-export const beards = [
+const beards = [
   "Стандарт",
   "Легкая Небритость",
   "Бальбо",
@@ -65,10 +65,10 @@ export const beards = [
   "Эмброуз",
   "Линкольнский Занавес", // 30
 ]; // Бороды
-export const beardsId: number[] = [];
+const beardsId: number[] = [];
 for (let i = 0; i < beards.length; i++) beardsId.push(i);
 
-export const brows = [
+const brows = [
   "Стандарт",
   "Сбалансированные",
   "Модные",
@@ -105,10 +105,10 @@ export const brows = [
   "Исчезающие",
   "Одинокие", // 35
 ]; // Брови
-export const browsId: number[] = [];
+const browsId: number[] = [];
 for (let i = 0; i < brows.length; i++) browsId.push(i);
 
-export const older = [
+const older = [
   "Стандарт",
   "Гусиные лапки",
   "Первые Признаки",
@@ -126,10 +126,10 @@ export const older = [
   "Наркоман",
   "Гериатрический", // 16
 ]; // Старение
-export const olderId: number[] = [];
+const olderId: number[] = [];
 for (let i = 0; i < older.length; i++) olderId.push(i);
 
-export const cosmetics = [
+const cosmetics = [
   "Стандарт",
   "Дымчато-Черный",
   "Бронза",
@@ -148,10 +148,10 @@ export const cosmetics = [
   "Тлеющий рубин",
   "Поп-принцесса", // 17
 ]; // Косметика
-export const cosmeticsId: number[] = [];
+const cosmeticsId: number[] = [];
 for (let i = 0; i < cosmetics.length; i++) cosmeticsId.push(i);
 
-export const rumyan = [
+const rumyan = [
   "Стандарт",
   "Полный",
   "Под углом",
@@ -161,10 +161,10 @@ export const rumyan = [
   "Возлюбленный",
   "Восьмидесятые",
 ]; // Румянец - 8
-export const rumyanId: number[] = [];
+const rumyanId: number[] = [];
 for (let i = 0; i < rumyan.length; i++) rumyanId.push(i);
 
-export const faceColor = [
+const faceColor = [
   "Стандарт",
   "Румяные Щеки",
   "Стерневая Сыпь",
@@ -179,10 +179,10 @@ export const faceColor = [
   "Бледный",
   "Призрачный", // 13
 ]; // Цвет лица
-export const faceColorId: number[] = [];
+const faceColorId: number[] = [];
 for (let i = 0; i < faceColor.length; i++) faceColorId.push(i);
 
-export const zagar = [
+const zagar = [
   "Стандарт",
   "Неравномерный",
   "Наждачная бумага",
@@ -196,10 +196,10 @@ export const zagar = [
   "Потрескавшийся",
   "Песчаный", // 12
 ]; // Загар
-export const zagarId: number[] = [];
+const zagarId: number[] = [];
 for (let i = 0; i < zagar.length; i++) zagarId.push(i);
 
-export const pomada = [
+const pomada = [
   "Стандарт",
   "Матовые",
   "Лоск",
@@ -212,10 +212,10 @@ export const pomada = [
   "Размазанные",
   "Гейша",
 ]; // Помада - 11
-export const pomadaId: number[] = [];
+const pomadaId: number[] = [];
 for (let i = 0; i < pomada.length; i++) pomadaId.push(i);
 
-export const vesnushki = [
+const vesnushki = [
   "Стандарт",
   "Ангелоподобный",
   "Повсюду",
@@ -236,10 +236,10 @@ export const vesnushki = [
   "Парочка",
   "Рост", // 19
 ]; // Веснушки
-export const vesnushkiId: number[] = [];
+const vesnushkiId: number[] = [];
 for (let i = 0; i < vesnushki.length; i++) vesnushkiId.push(i);
 
-export const hairGrud = [
+const hairGrud = [
   "Стандарт",
   "Естественные",
   "Полоска",
@@ -259,10 +259,10 @@ export const hairGrud = [
   "Слизняк и щипки",
   "Волосатые руки", // 18
 ]; // Волосы на груди
-export const hairGrudId: number[] = [];
+const hairGrudId: number[] = [];
 for (let i = 0; i < hairGrud.length; i++) hairGrudId.push(i);
 
-export const eyeColor = [
+const eyeColor = [
   "Зеленый",
   "Изумрудный",
   "голубой",
@@ -296,11 +296,11 @@ export const eyeColor = [
   "Смерть",
   "Зомби", // 32
 ]; // Цвет глаз
-export const eyeColorId: number[] = [];
+const eyeColorId: number[] = [];
 for (let i = 0; i < eyeColor.length; i++) eyeColorId.push(i);
 
 // Волосы
-export const hairsMale = [
+const hairsMale = [
   "Стандарт",
   "2",
   "3",
@@ -339,7 +339,7 @@ export const hairsMale = [
   "37",
   "38", // Removed 23
 ];
-export const hairsFemale = [
+const hairsFemale = [
   "Стандарт",
   "1",
   "2",
@@ -381,16 +381,51 @@ export const hairsFemale = [
   "39", // Removed 24
 ];
 
-export const hairColor: string[] = []; // Временно! После заменить на нормальные названия.
+const hairColor: string[] = []; // Временно! После заменить на нормальные названия.
 for (let i = 1; i < 66; i++) hairColor.push(`${i}`);
-export const hairColorId: number[] = [];
+const hairColorId: number[] = [];
 for (let i = 0; i < 65; i++) hairColorId.push(i);
 
-export const hairsMaleId = [
+const hairsMaleId = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
   22, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 72, 73,
 ];
-export const hairsFemaleId = [
+const hairsFemaleId = [
   0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
   22, 23, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 76, 77,
 ];
+
+export const list = {
+  beards,
+  brows,
+  hairGrud,
+  older,
+  deffects,
+  hairsMale,
+  hairsFemale,
+  hairColor,
+  eyeColor,
+  colorsList,
+  pomada,
+  cosmetics,
+  rumyan,
+  zagar,
+  vesnushki,
+  beardsId,
+  browsId,
+  hairGrudId,
+  olderId,
+  deffectsId,
+  hairsMaleId,
+  hairsFemaleId,
+  hairColorId,
+  eyeColorId,
+  colorsListId,
+  pomadaId,
+  cosmeticsId,
+  rumyanId,
+  zagarId,
+  vesnushkiId,
+  faceColor,
+  faceColorId,
+};

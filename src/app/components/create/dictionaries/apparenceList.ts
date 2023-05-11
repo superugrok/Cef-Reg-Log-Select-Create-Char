@@ -1,6 +1,3 @@
-import React from "react";
-import { Switcher } from "../Switcher";
-import { SwitchRange } from "../SwitchRange";
 import { IElements } from "@Types/components/create/elements";
 
 export const elements: IElements[] = [
@@ -9,11 +6,13 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Hairstyle",
-        element: <Switcher type="hair" />,
+        elementType: "Switcher",
+        type: "hair",
       },
       {
         title: "Hair color",
-        element: <Switcher type="hairColor" />,
+        elementType: "Switcher",
+        type: "hairColor",
       },
     ],
   },
@@ -22,11 +21,13 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Eyes type",
-        element: <SwitchRange range={true} type="eyes" />,
+        type: "eyes",
+        elementType: "SwitchRange",
       },
       {
         title: "Eyes color",
-        element: <Switcher type="eyesColor" />,
+        elementType: "Switcher",
+        type: "eyesColor",
       },
     ],
   },
@@ -35,23 +36,28 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Brows type",
-        element: <Switcher type="brows" />,
+        elementType: "Switcher",
+        type: "brows",
       },
       {
         title: "Brows color",
-        element: <Switcher type="browsColor" />,
+        elementType: "Switcher",
+        type: "browsColor",
       },
       {
         title: "Brows height",
-        element: <SwitchRange range={true} type="browsHeight" />,
+        elementType: "SwitchRange",
+        type: "browsHeight",
       },
       {
         title: "Brows width",
-        element: <SwitchRange range={true} type="browsWidth" />,
+        elementType: "SwitchRange",
+        type: "browsWidth",
       },
       {
         title: "Eyebrow transparency",
-        element: <SwitchRange range={true} type="browsTp" />,
+        elementType: "SwitchRange",
+        type: "browsTp",
       },
     ],
   },
@@ -60,27 +66,33 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Nose width",
-        element: <SwitchRange range={true} type="noseWidth" />,
+        elementType: "SwitchRange",
+        type: "noseWidth",
       },
       {
         title: "Nose height",
-        element: <SwitchRange range={true} type="noseHeight" />,
+        elementType: "SwitchRange",
+        type: "noseHeight",
       },
       {
         title: "Nose length",
-        element: <SwitchRange range={true} type="noseLength" />,
+        elementType: "SwitchRange",
+        type: "noseLength",
       },
       {
         title: "Nose tip",
-        element: <SwitchRange range={true} type="noseTip" />,
+        elementType: "SwitchRange",
+        type: "noseTip",
       },
       {
         title: "Nose bridge",
-        element: <SwitchRange range={true} type="noseBridge" />,
+        elementType: "SwitchRange",
+        type: "noseBridge",
       },
       {
         title: "Nose bridge shift",
-        element: <SwitchRange range={true} type="noseBridgeShift" />,
+        elementType: "SwitchRange",
+        type: "noseBridgeShift",
       },
     ],
   },
@@ -89,39 +101,48 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Cbone height",
-        element: <SwitchRange range={true} type="cboneHeight" />,
+        elementType: "SwitchRange",
+        type: "cboneHeight",
       },
       {
         title: "Cbone width",
-        element: <SwitchRange range={true} type="cboneWidth" />,
+        elementType: "SwitchRange",
+        type: "cboneWidth",
       },
       {
         title: "Cheek width",
-        element: <SwitchRange range={true} type="cheekWidth" />,
+        elementType: "SwitchRange",
+        type: "cheekWidth",
       },
       {
         title: "Jaw width",
-        element: <SwitchRange range={true} type="jawWidth" />,
+        elementType: "SwitchRange",
+        type: "jawWidth",
       },
       {
         title: "Chin length",
-        element: <SwitchRange range={true} type="chinLength" />,
+        elementType: "SwitchRange",
+        type: "chinLength",
       },
       {
         title: "Chin width",
-        element: <SwitchRange range={true} type="chinWidth" />,
+        elementType: "SwitchRange",
+        type: "chinWidth",
       },
       {
         title: "Chin position",
-        element: <SwitchRange range={true} type="chinPos" />,
+        elementType: "SwitchRange",
+        type: "chinPos",
       },
       {
         title: "Chin shape",
-        element: <SwitchRange range={true} type="chinShape" />,
+        elementType: "SwitchRange",
+        type: "chinShape",
       },
       {
         title: "Neck width",
-        element: <SwitchRange range={true} type="neckWidth" />,
+        elementType: "SwitchRange",
+        type: "neckWidth",
       },
     ],
   },
@@ -130,19 +151,23 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Lips type",
-        element: <SwitchRange range={true} type="lips" />,
+        elementType: "SwitchRange",
+        type: "lips",
       },
       {
         title: "Lipstick",
-        element: <Switcher type="pomada" />,
+        elementType: "Switcher",
+        type: "pomada",
       },
       {
         title: "Lips color",
-        element: <Switcher type="lipsColor" />,
+        elementType: "Switcher",
+        type: "lipsColor",
       },
       {
         title: "Lipstick transparency",
-        element: <SwitchRange range={true} type="pomadaTp" />,
+        elementType: "SwitchRange",
+        type: "pomadaTp",
       },
     ],
   },
@@ -151,15 +176,18 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Hairstyle",
-        element: <Switcher type="beard" />,
+        elementType: "Switcher",
+        type: "beard",
       },
       {
         title: "Beard color",
-        element: <Switcher type="beardColor" />,
+        elementType: "Switcher",
+        type: "beardColor",
       },
       {
         title: "Beard transparency",
-        element: <SwitchRange range={true} type="beardTp" />,
+        elementType: "SwitchRange",
+        type: "beardTp",
       },
     ],
   },
@@ -168,35 +196,43 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Face color",
-        element: <Switcher type="faceColor" />,
+        elementType: "Switcher",
+        type: "faceColor",
       },
       {
         title: "Face color transparency",
-        element: <SwitchRange range={true} type="faceColorTp" />,
+        elementType: "SwitchRange",
+        type: "faceColorTp",
       },
       {
         title: "Chest hairs type",
-        element: <Switcher type="hairGrud" />,
+        elementType: "Switcher",
+        type: "hairGrud",
       },
       {
         title: "Chest hairs color",
-        element: <SwitchRange range={true} type="hairGrudColor" />,
+        elementType: "SwitchRange",
+        type: "hairGrudColor",
       },
       {
         title: "Older",
-        element: <Switcher type="older" />,
+        elementType: "Switcher",
+        type: "older",
       },
       {
         title: "Older effects",
-        element: <SwitchRange range={true} type="olderTp" />,
+        elementType: "SwitchRange",
+        type: "olderTp",
       },
       {
         title: "Scars",
-        element: <Switcher type="deffects" />,
+        elementType: "Switcher",
+        type: "deffects",
       },
       {
         title: "Scars effects",
-        element: <SwitchRange range={true} type="deffectsTp" />,
+        elementType: "SwitchRange",
+        type: "deffectsTp",
       },
     ],
   },
@@ -205,39 +241,48 @@ export const elements: IElements[] = [
     content: [
       {
         title: "Cosmetics",
-        element: <Switcher type="cosmetics" />,
+        elementType: "Switcher",
+        type: "cosmetics",
       },
       {
         title: "Cosmetics transparency",
-        element: <SwitchRange range={true} type="cosmeticsTp" />,
+        elementType: "SwitchRange",
+        type: "cosmeticsTp",
       },
       {
         title: "Blush",
-        element: <Switcher type="rumyan" />,
+        elementType: "Switcher",
+        type: "rumyan",
       },
       {
         title: "Blush color",
-        element: <Switcher type="rumyanColor" />,
+        elementType: "Switcher",
+        type: "rumyanColor",
       },
       {
         title: "Blush effects",
-        element: <SwitchRange range={true} type="rumyanTp" />,
+        elementType: "SwitchRange",
+        type: "rumyanTp",
       },
       {
         title: "A tan",
-        element: <Switcher type="zagar" />,
+        elementType: "Switcher",
+        type: "zagar",
       },
       {
         title: "A tan transparency",
-        element: <SwitchRange range={true} type="zagarTp" />,
+        elementType: "SwitchRange",
+        type: "zagarTp",
       },
       {
         title: "Freckles and moles",
-        element: <Switcher type="rodinki" />,
+        elementType: "Switcher",
+        type: "rodinki",
       },
       {
         title: "Freckles and moles transparency",
-        element: <SwitchRange range={true} type="rodinkiTp" />,
+        elementType: "SwitchRange",
+        type: "rodinkiTp",
       },
     ],
   },

@@ -1,4 +1,11 @@
 export interface ICreateReducer {
+  parents: {
+    gender: "male" | "female";
+    father: string;
+    mother: string;
+    skinValue: number;
+    resValue: number;
+  };
   apparence: {
     // Причёска
     hair: string;
@@ -59,4 +66,5 @@ export interface ICreateReducer {
     rodinki: string;
     rodinkiTp: number;
   };
+  clothing: {};
 }

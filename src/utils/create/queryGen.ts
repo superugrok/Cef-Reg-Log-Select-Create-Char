@@ -1,45 +1,5 @@
-import {
-  parentsFeDic,
-  parentsMaDic,
-  fathers,
-  mothers,
-  gender,
-  genderId,
-} from "@Components/create/dictionaries/parentsDic";
-import {
-  beards,
-  beardsId,
-  brows,
-  browsId,
-  hairGrud,
-  hairGrudId,
-  older,
-  olderId,
-  deffects,
-  deffectsId,
-  hairsMale,
-  hairsFemale,
-  hairsMaleId,
-  hairsFemaleId,
-  hairColor,
-  hairColorId,
-  eyeColor,
-  eyeColorId,
-  colorsList,
-  colorsListId,
-  pomada,
-  pomadaId,
-  cosmetics,
-  cosmeticsId,
-  rumyan,
-  rumyanId,
-  zagar,
-  zagarId,
-  vesnushki,
-  vesnushkiId,
-  faceColor,
-  faceColorId,
-} from "@Components/create/dictionaries/apparenceDic";
+import { parentsList } from "@Components/create/dictionaries/parentsDic";
+import { list } from "@Components/create/dictionaries/apparenceDic";
 
 const getInt = (word: string, dic: string[], dicInt: number[] | boolean[]) => {
   let wordIndex = dic.indexOf(word);
@@ -63,18 +23,26 @@ export const queryGen = (
   let genderVal = midObj.gender;
   const finishStates: { [key: string]: number | boolean } = {
     // Родители
-    Mother: getInt(midObj.mother, parentsFeDic, mothers),
-    Father: getInt(midObj.father, parentsMaDic, fathers),
+    Mother: getInt(
+      midObj.mother,
+      parentsList.parentsFeDic,
+      parentsList.mothers
+    ),
+    Father: getInt(
+      midObj.father,
+      parentsList.parentsMaDic,
+      parentsList.fathers
+    ),
     // Ressemblance & Skin Tone
     Resemblance: midObj.resValue,
     SkinTone: midObj.skinValue,
     // Apparence
-    EyeColor: getInt(midObj.eyesColor, eyeColor, eyeColorId),
-    HairColor: getInt(midObj.hairColor, hairColor, hairColorId),
+    EyeColor: getInt(midObj.eyesColor, list.eyeColor, list.eyeColorId),
+    HairColor: getInt(midObj.hairColor, list.hairColor, list.hairColorId),
     Hair: getInt(
       midObj.hair,
-      genderVal == "Мужской" ? hairsMale : hairsFemale,
-      genderVal == "Мужской" ? hairsMaleId : hairsFemaleId
+      genderVal == "Мужской" ? list.hairsMale : list.hairsFemale,
+      genderVal == "Мужской" ? list.hairsMaleId : list.hairsFemaleId
     ),
     NoseWidth: midObj.noseWidth,
     NoseHeight: midObj.noseHeight,
@@ -95,33 +63,37 @@ export const queryGen = (
     ChinWidth: midObj.chinWidth,
     ChinShape: midObj.chinShape,
     NeckWidth: midObj.neckWidth,
-    Blemishes: getInt(midObj.deffects, deffects, deffectsId),
+    Blemishes: getInt(midObj.deffects, list.deffects, list.deffectsId),
     BlemishesOpacity: midObj.deffectsTp,
-    FacialHair: getInt(midObj.beard, beards, beardsId),
+    FacialHair: getInt(midObj.beard, list.beards, list.beardsId),
     FacialHairOpacity: midObj.beardTp,
-    Eyebrows: getInt(midObj.brows, brows, browsId),
+    Eyebrows: getInt(midObj.brows, list.brows, list.browsId),
     EyebrowsOpacity: midObj.browsTp,
-    Ageing: getInt(midObj.older, older, olderId),
+    Ageing: getInt(midObj.older, list.older, list.olderId),
     AgeingOpacity: midObj.olderTp,
-    Makeup: getInt(midObj.cosmetics, cosmetics, cosmeticsId),
+    Makeup: getInt(midObj.cosmetics, list.cosmetics, list.cosmeticsId),
     MakeupOpacity: midObj.cosmeticsTp,
-    Blush: getInt(midObj.rumyan, rumyan, rumyanId),
+    Blush: getInt(midObj.rumyan, list.rumyan, list.rumyanId),
     BlushOpacity: midObj.rumyanTp,
-    Complexion: getInt(midObj.faceColor, faceColor, faceColorId),
+    Complexion: getInt(midObj.faceColor, list.faceColor, list.faceColorId),
     ComplexionOpacity: midObj.faceColorTp,
-    Sundamage: getInt(midObj.zagar, zagar, zagarId),
+    Sundamage: getInt(midObj.zagar, list.zagar, list.zagarId),
     SundamageOpacity: midObj.zagarTp,
-    Lipstick: getInt(midObj.pomada, pomada, pomadaId),
+    Lipstick: getInt(midObj.pomada, list.pomada, list.pomadaId),
     LipstickOpacity: midObj.pomadaTp,
-    Freckles: getInt(midObj.rodinki, vesnushki, vesnushkiId),
+    Freckles: getInt(midObj.rodinki, list.vesnushki, list.vesnushkiId),
     FrecklesOpacity: midObj.rodinkiTp,
-    ChestHair: getInt(midObj.hairGrud, hairGrud, hairGrudId),
+    ChestHair: getInt(midObj.hairGrud, list.hairGrud, list.hairGrudId),
     ChestHairOpacity: midObj.hairGrudTp,
-    EyebrowColor: getInt(midObj.browsColor, colorsList, colorsListId),
-    BeardColor: getInt(midObj.beardColor, colorsList, colorsListId),
-    ChestHairColor: getInt(midObj.hairGrudColor, colorsList, colorsListId),
-    BlushColor: getInt(midObj.rumyanColor, colorsList, colorsListId),
-    LipstickColor: getInt(midObj.lipsColor, colorsList, colorsListId),
+    EyebrowColor: getInt(midObj.browsColor, list.colorsList, list.colorsListId),
+    BeardColor: getInt(midObj.beardColor, list.colorsList, list.colorsListId),
+    ChestHairColor: getInt(
+      midObj.hairGrudColor,
+      list.colorsList,
+      list.colorsListId
+    ),
+    BlushColor: getInt(midObj.rumyanColor, list.colorsList, list.colorsListId),
+    LipstickColor: getInt(midObj.lipsColor, list.colorsList, list.colorsListId),
   };
 
   switch (action) {
