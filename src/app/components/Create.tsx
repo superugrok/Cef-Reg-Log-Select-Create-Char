@@ -10,6 +10,7 @@ import { Stages } from "@Components/create/Stages";
 import { Parents } from "@Components/create/stages/Parents";
 import { Clothing } from "@Components/create/stages/Clothing";
 import { Apparence } from "@Components/create/stages/Apparence";
+import { Random } from "./create/Random";
 
 export const Create = () => {
   // Debug
@@ -19,15 +20,31 @@ export const Create = () => {
     "parents" | "clothing" | "apparence"
   >("parents");
 
+  const getStage = (stage: "parents" | "clothing" | "apparence") => {
+    switch (stage) {
+      case "apparence":
+        return <Apparence stage={stage} />;
+      case "clothing":
+        return <Clothing stage={stage} />;
+      case "parents":
+        return <Parents stage={stage} />;
+    }
+  };
+
   return (
     <div className={debugMode ? "create_debug_container" : "create_container"}>
       <Block stage="create">
         <Stages setStage={setStage} stage={stage} />
-        <div className="create_content_container">
+        <Random />
+        {/* <div className="create_content_container">
           <Parents stage={stage} />
           <Apparence stage={stage} />
           <Clothing stage={stage} />
-        </div>
+        </div> */}
+        {
+          // Those components supports "always in dom" mode. Disabled for now because of "uncontrolled inputs" silly error.
+        }
+        <div className="create_content_container">{getStage(stage)}</div>
         <Button text="Finish" onClick={() => console.log("Finishing create")} />
       </Block>
     </div>

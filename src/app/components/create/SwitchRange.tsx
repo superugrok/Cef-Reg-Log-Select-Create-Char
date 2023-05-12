@@ -11,7 +11,6 @@ export const SwitchRange = ({
 }: ISwitchRangeProps): JSX.Element => {
   const dispatch = useDispatch();
   const value = useSelector((state: IStore) => state.create[stage][type]);
-
   const changeRange = (value: number, type: string) => {
     changeValue(dispatch, { value, type, stage });
   };
@@ -23,7 +22,7 @@ export const SwitchRange = ({
         min={!range ? "-1" : "0"}
         max={!range ? "1" : "100"}
         step={!range ? "0.01" : "1"}
-        defaultValue={value}
+        value={value}
         className={!range ? "slider_new" : "slider"}
         onChange={(event: any) => changeRange(event.target.value, type)}
       />

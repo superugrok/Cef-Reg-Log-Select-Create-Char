@@ -5,6 +5,7 @@ import { parentsList } from "./dictionaries/parentsDic";
 import { useSelector, useDispatch } from "react-redux";
 import { IStore } from "@Types/store/store";
 import { changeValue } from "@Store/actions/create";
+import { setDefaultState } from "@Store/actions/create";
 import { ISwitcherProps } from "@Types/components/create/create";
 
 export const Switcher = ({ stage, type }: ISwitcherProps) => {
@@ -15,11 +16,11 @@ export const Switcher = ({ stage, type }: ISwitcherProps) => {
   // props.type - главный элемент логики, позволяет знать с каким свитчером идёт работа
   const dicCol = new Map([
     // Parents
-    ["gender", { dic: gender }],
+    ["gender", { dic: parentsList.gender }],
     ["mother", { dic: parentsList.parentsFeDic }],
     ["father", { dic: parentsList.parentsMaDic }],
     // Apparence
-    ["hair", { dic: gender == "male" ? list.hairsMale : list.hairsFemale }],
+    ["hair", { dic: gender == "Male" ? list.hairsMale : list.hairsFemale }],
     ["hairColor", { dic: list.hairColor }],
     ["beard", { dic: list.beards }],
     ["brows", { dic: list.brows }],
@@ -60,6 +61,7 @@ export const Switcher = ({ stage, type }: ISwitcherProps) => {
     let index: number = dic.indexOf(element.textContent);
     let member: any = dic[getMath(move, index)];
     if (member) {
+      type == "gender" && setDefaultState(dispatch);
       // Check if next member exist
       changeValue(dispatch, {
         value: member,

@@ -1,6 +1,6 @@
 export interface ICreateReducer {
   parents: {
-    gender: "male" | "female";
+    gender: "Male" | "Female";
     father: string;
     mother: string;
     skinValue: number;

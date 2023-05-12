@@ -8,7 +8,7 @@ const mothers = [
 ];
 const genderId = [true, false];
 
-const gender = ["male", "female"];
+const gender = ["Male", "Female"];
 
 const parentsFeDic: string[] = [
   "Amelia",

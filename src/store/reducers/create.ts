@@ -4,7 +4,7 @@ import { ICreateChangeValue } from "@Types/components/create/create";
 
 const initialState: ICreateReducer = {
   parents: {
-    gender: "male",
+    gender: "Male",
     father: "Adrian",
     mother: "Amelia",
     skinValue: 50,
@@ -77,6 +77,18 @@ export const createReducer = createSlice({
   name: "CREATE",
   initialState,
   reducers: {
+    SET_RANDOM(state, action: PayloadAction<ICreateReducer>) {
+      // state = action.payload - Spread cannot be used because of redux no-support.
+      state.apparence = action.payload.apparence;
+      state.clothing = action.payload.clothing;
+      state.parents = action.payload.parents;
+    },
+    SET_DEFAULT_STATE(state) {
+      // state = initialState cannot be used because of redux no-support.
+      state.apparence = initialState.apparence;
+      state.clothing = initialState.clothing;
+      state.parents = initialState.parents;
+    },
     CHANGE_VALUE(state, action: PayloadAction<ICreateChangeValue>) {
       state[action.payload.stage][action.payload.type] = action.payload.value;
     },

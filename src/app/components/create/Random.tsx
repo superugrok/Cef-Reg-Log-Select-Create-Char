@@ -1,10 +1,13 @@
 import React from "react";
 import { queryGen } from "@Utils/create/queryGen";
-
 import { parentsList } from "./dictionaries/parentsDic";
 import { list } from "./dictionaries/apparenceDic";
+import { setRandom } from "@Store/actions/create";
+import { useDispatch } from "react-redux";
+import { ICreateReducer } from "store/create";
 
-export const Random = (props: any) => {
+export const Random = () => {
+  const dispatch = useDispatch();
   const getRandomFloat = (min: number, max: number) => {
     return Math.random() * (max - min) + min;
   };
@@ -13,146 +16,103 @@ export const Random = (props: any) => {
     return Math.floor(Math.random() * (max - min + 1)) + min;
   };
 
-  const goRandom = () => {
-    let ranObj = {
-      // Родители
-      Mother: getRandomInRange(21, 41),
-      Father: getRandomInRange(0, 20),
-      // Ressemblance & Skin Tone
-      Resemblance: getRandomInRange(0, 100),
-      SkinTone: getRandomInRange(0, 100),
-      // Apparence
-      EyeColor: getRandomInRange(0, 31),
-      HairColor: getRandomInRange(0, 64),
-      Hair: getRandomInRange(0, 22),
-      NoseWidth: getRandomFloat(-1, 1),
-      NoseHeight: getRandomFloat(-1, 1),
-      NoseLength: getRandomFloat(-1, 1),
-      NoseBridge: getRandomFloat(-1, 1),
-      NoseTip: getRandomFloat(-1, 1),
-      NoseBridgeShift: getRandomFloat(-1, 1),
-      BrowHeight: getRandomFloat(-1, 1),
-      BrowWidth: getRandomFloat(-1, 1),
-      CboneHeight: getRandomFloat(-1, 1),
-      CboneWidth: getRandomFloat(-1, 1),
-      CheekWidth: getRandomFloat(-1, 1),
-      Eyes: getRandomFloat(-1, 1),
-      Lips: getRandomFloat(-1, 1),
-      JawWidth: getRandomFloat(-1, 1),
-      ChinLength: getRandomFloat(-1, 1),
-      ChinPos: getRandomFloat(-1, 1),
-      ChinWidth: getRandomFloat(-1, 1),
-      ChinShape: getRandomFloat(-1, 1),
-      NeckWidth: getRandomFloat(-1, 1),
-      Blemishes: getRandomInRange(0, 24),
-      BlemishesOpacity: getRandomFloat(-1, 1),
-      FacialHair: getRandomInRange(0, 29),
-      FacialHairOpacity: getRandomFloat(-1, 1),
-      Eyebrows: getRandomInRange(0, 34),
-      EyebrowsOpacity: getRandomFloat(-1, 1),
-      Ageing: getRandomInRange(0, 15),
-      AgeingOpacity: getRandomFloat(-1, 1),
-      Makeup: getRandomInRange(0, 16),
-      MakeupOpacity: getRandomFloat(-1, 1),
-      Blush: getRandomInRange(0, 7),
-      BlushOpacity: getRandomFloat(-1, 1),
-      Complexion: getRandomInRange(0, 12),
-      ComplexionOpacity: getRandomFloat(-1, 1),
-      Sundamage: getRandomInRange(0, 11),
-      SundamageOpacity: getRandomFloat(-1, 1),
-      Lipstick: getRandomInRange(0, 10),
-      LipstickOpacity: getRandomFloat(-1, 1),
-      Freckles: getRandomInRange(0, 18),
-      FrecklesOpacity: getRandomFloat(-1, 1),
-      ChestHair: getRandomInRange(0, 17),
-      ChestHairOpacity: getRandomFloat(-1, 1),
-      EyebrowColor: getRandomInRange(0, 64),
-      BeardColor: getRandomInRange(0, 64),
-      ChestHairColor: getRandomInRange(0, 64),
-      BlushColor: getRandomInRange(0, 64),
-      LipstickColor: getRandomInRange(0, 64),
-    };
-    let createStates = {
-      parents: {
-        gender: props.all.parents.gender,
-        mother: parentsList.parentsFeDic[ranObj.Mother - 21],
-        father: parentsList.parentsMaDic[ranObj.Father],
+  const getParents = (fatherId: number, motherId: number) => {
+    const parentsNames = {
+        female: parentsList.parentsFeDic,
+        male: parentsList.parentsMaDic,
       },
-      ressemblance: {
-        resValue: ranObj.Resemblance,
-        skinValue: ranObj.SkinTone,
+      motherName = parentsNames.female[parentsList.mothers.indexOf(motherId)],
+      fatherName = parentsNames.male[parentsList.fathers.indexOf(fatherId)];
+    return { motherName, fatherName };
+  };
+
+  const goRandom = () => {
+    const gender: ("Male" | "Female")[] = ["Male", "Female"];
+    const genderRandom = gender[getRandomInRange(0, 1)];
+    const parents = getParents(
+      getRandomInRange(0, 20),
+      getRandomInRange(21, 41)
+    );
+    const randomState: ICreateReducer = {
+      clothing: {},
+      parents: {
+        gender: genderRandom,
+        mother: parents.motherName,
+        father: parents.fatherName,
+        resValue: getRandomInRange(0, 100),
+        skinValue: getRandomInRange(0, 100),
       },
       apparence: {
         // Причёска
         hair:
-          props.all.parents.gender == "Мужской"
-            ? list.hairsMale[ranObj.Hair]
-            : list.hairsFemale[ranObj.Hair],
-        hairColor: list.hairColor[ranObj.HairColor],
+          genderRandom == "Male"
+            ? list.hairsMale[getRandomInRange(0, 22)]
+            : list.hairsFemale[getRandomInRange(0, 22)],
+        hairColor: list.hairColor[getRandomInRange(0, 64)],
         // Глаза
-        eyes: ranObj.Eyes,
-        eyesColor: list.eyeColor[ranObj.EyeColor],
+        eyes: getRandomFloat(-1, 1),
+        eyesColor: list.eyeColor[getRandomInRange(0, 31)],
         // Брови
-        brows: list.brows[ranObj.Eyebrows],
-        browsHeight: ranObj.BrowHeight,
-        browsWidth: ranObj.BrowWidth,
-        browsColor: list.colorsList[ranObj.EyebrowColor],
-        browsTp: ranObj.EyebrowsOpacity,
+        brows: list.brows[getRandomInRange(0, 34)],
+        browsHeight: getRandomFloat(-1, 1),
+        browsWidth: getRandomFloat(-1, 1),
+        browsColor: list.colorsList[getRandomInRange(0, 64)],
+        browsTp: getRandomFloat(-1, 1),
         // Нос и переносица
-        noseWidth: ranObj.NoseWidth,
-        noseHeight: ranObj.NoseHeight,
-        noseLength: ranObj.NoseLength,
-        noseBridge: ranObj.NoseBridge, // Кончик носа
-        noseTip: ranObj.NoseTip, // Тип переносицы
-        noseBridgeShift: ranObj.NoseBridgeShift, // Сдвиг переносицы
+        noseWidth: getRandomFloat(-1, 1),
+        noseHeight: getRandomFloat(-1, 1),
+        noseLength: getRandomFloat(-1, 1),
+        noseBridge: getRandomFloat(-1, 1), // Кончик носа
+        noseTip: getRandomFloat(-1, 1), // Тип переносицы
+        noseBridgeShift: getRandomFloat(-1, 1), // Сдвиг переносицы
         // Черты лица
-        cboneHeight: ranObj.CboneHeight, // Высота скул
-        cboneWidth: ranObj.CboneWidth, // Ширина скул
-        cheekWidth: ranObj.CheekWidth, // Ширина щёк
-        jawWidth: ranObj.JawWidth, // Ширина челюсти
-        chinLength: ranObj.ChinLength, // Длина подобродка
-        chinWidth: ranObj.ChinWidth, // Ширина подбородка
-        chinPos: ranObj.ChinPos, // Положение подбородка
-        chinShape: ranObj.ChinShape, // Форма подбородка
-        neckWidth: ranObj.NeckWidth, // Ширина шеи
+        cboneHeight: getRandomFloat(-1, 1), // Высота скул
+        cboneWidth: getRandomFloat(-1, 1), // Ширина скул
+        cheekWidth: getRandomFloat(-1, 1), // Ширина щёк
+        jawWidth: getRandomFloat(-1, 1), // Ширина челюсти
+        chinLength: getRandomFloat(-1, 1), // Длина подобродка
+        chinWidth: getRandomFloat(-1, 1), // Ширина подбородка
+        chinPos: getRandomFloat(-1, 1), // Положение подбородка
+        chinShape: getRandomFloat(-1, 1), // Форма подбородка
+        neckWidth: getRandomFloat(-1, 1), // Ширина шеи
         // Губы
-        lips: ranObj.Lips, // Тип губ
-        lipsColor: list.colorsList[ranObj.LipstickColor],
-        pomada: list.pomada[ranObj.Lipstick],
-        pomadaTp: ranObj.LipstickOpacity,
+        lips: getRandomFloat(-1, 1), // Тип губ
+        lipsColor: list.colorsList[getRandomInRange(0, 64)],
+        pomada: list.pomada[getRandomInRange(0, 10)],
+        pomadaTp: getRandomFloat(-1, 1),
         // Борода
-        beard: list.beards[ranObj.FacialHair],
-        beardColor: list.colorsList[ranObj.BeardColor],
-        beardTp: ranObj.FacialHairOpacity,
+        beard: list.beards[getRandomInRange(0, 29)],
+        beardColor: list.colorsList[getRandomInRange(0, 64)],
+        beardTp: getRandomFloat(-1, 1),
         // Приметы
-        faceColor: list.faceColor[ranObj.Complexion],
-        faceColorTp: ranObj.ComplexionOpacity,
-        hairGrud: list.hairGrud[ranObj.ChestHair],
-        hairGrudColor: list.colorsList[ranObj.ChestHairColor],
-        hairGrudTp: ranObj.ChestHairOpacity,
-        older: list.older[ranObj.Ageing],
-        olderTp: ranObj.AgeingOpacity,
-        deffects: list.deffects[ranObj.Blemishes],
-        deffectsTp: ranObj.BlemishesOpacity,
+        faceColor: list.faceColor[getRandomInRange(0, 12)],
+        faceColorTp: getRandomFloat(-1, 1),
+        hairGrud: list.hairGrud[getRandomInRange(0, 17)],
+        hairGrudColor: list.colorsList[getRandomInRange(0, 64)],
+        hairGrudTp: getRandomFloat(-1, 1),
+        older: list.older[getRandomInRange(0, 15)],
+        olderTp: getRandomFloat(-1, 1),
+        deffects: list.deffects[getRandomInRange(0, 24)],
+        deffectsTp: getRandomFloat(-1, 1),
         // Особенности
-        cosmetics: list.cosmetics[ranObj.Makeup],
-        cosmeticsTp: ranObj.MakeupOpacity,
-        rumyan: list.rumyan[ranObj.Blush],
-        rumyanColor: list.colorsList[ranObj.BlushColor],
-        rumyanTp: ranObj.BlushOpacity,
-        zagar: list.zagar[ranObj.Sundamage],
-        zagarTp: ranObj.SundamageOpacity,
-        rodinki: list.vesnushki[ranObj.Freckles],
-        rodinkiTp: ranObj.FrecklesOpacity,
+        cosmetics: list.cosmetics[getRandomInRange(0, 16)],
+        cosmeticsTp: getRandomFloat(-1, 1),
+        rumyan: list.rumyan[getRandomInRange(0, 7)],
+        rumyanColor: list.colorsList[getRandomInRange(0, 64)],
+        rumyanTp: getRandomFloat(-1, 1),
+        zagar: list.zagar[getRandomInRange(0, 11)],
+        zagarTp: getRandomFloat(-1, 1),
+        rodinki: list.vesnushki[getRandomInRange(0, 18)],
+        rodinkiTp: getRandomFloat(-1, 1),
       },
     };
-    props.createChar(createStates, "reset");
-    queryGen(props.all, "random", false, false, ranObj);
+    setRandom(dispatch, randomState);
+    // queryGen(props.all, "random", false, false, ranObj);
   };
 
   return (
     <button className="btn_random" onClick={() => goRandom()}>
-      Случайно
+      Random
     </button>
   );
 };
