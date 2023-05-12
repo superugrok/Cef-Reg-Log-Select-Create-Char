@@ -5,7 +5,7 @@ import { Switcher } from "../../Switcher";
 
 export const Elements = ({ stage }) => {
   return (
-    <div>
+    <div className="create_elements_wrapper">
       {elements.map((element, i) => (
         <div key={i}>
           {element.content.map((content, ic) => (
