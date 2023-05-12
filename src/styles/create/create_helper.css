@@ -338,6 +338,10 @@ details summary::marker {
     font-size: 1.5rem;
     /* background-size: 2vh; */
   }
+  .btn_reset {
+    font-size: 1.5rem;
+    /* background-size: 2vh; */
+  }
   .text_title {
     margin-top: 20px;
     font-size: 1.7rem;
