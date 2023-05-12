@@ -22,15 +22,18 @@ export const Parents = ({ stage }: ICreateSectionProps) => {
   React.useEffect(() => {
     const getParentsImg = async () => {
       const fatherImg = await import(
-        `@Images/create/parents/male/${fatherName}.jpg`
+        `@Images/create/parents/male/${fatherName}.png`
       );
       const motherImg = await import(
-        `@Images/create/parents/female/${motherName}.jpg`
+        `@Images/create/parents/female/${motherName}.png`
       );
       return { fatherImg, motherImg };
     };
     getParentsImg().then(({ fatherImg, motherImg }) =>
-      setParentsImg({ fatherImg, motherImg })
+      setParentsImg({
+        fatherImg: fatherImg.default,
+        motherImg: motherImg.default,
+      })
     );
   }, [fatherName, motherName]);
 
@@ -40,7 +43,10 @@ export const Parents = ({ stage }: ICreateSectionProps) => {
       style={{ display: stage == "parents" ? "flex" : "none" }}
     >
       <span className="text_title">Parents</span>
-      <div className="create_parents_image"></div>
+      <div className="create_parents_image">
+        <img src={parentsImg?.fatherImg} />
+        <img src={parentsImg?.motherImg} />
+      </div>
       {elements.map((element, i) => (
         <div key={i}>
           {element.content.map((content, ic) => (
