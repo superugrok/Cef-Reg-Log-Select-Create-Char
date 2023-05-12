@@ -4,10 +4,10 @@ import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
 import { finishEnter } from "@Store/actions/global";
 import { useDispatch, useSelector } from "react-redux";
-import { validateValue } from "@Utils/validatePassEmail";
+import { validateValue } from "@Utils/enter/validatePassEmail";
 import { ICharsList, ILoginProps } from "@Types/components/enter/login";
 import { IStore } from "@Types/store/store";
-import { debugLogin } from "@Utils/debugLogin";
+import { debugLogin } from "@Utils/enter/debugLogin";
 
 export const Login = ({ stage }: ILoginProps) => {
   // Debug mode!

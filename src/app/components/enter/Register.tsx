@@ -2,7 +2,7 @@ import React, { FormEvent } from "react";
 import { Input } from "@Components/common/Input";
 import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
-import { validateValue } from "@Utils/validatePassEmail";
+import { validateValue } from "@Utils/enter/validatePassEmail";
 import { IRegisterProps } from "@Types/components/enter/register";
 
 export const Register = ({ stage }: IRegisterProps) => {
