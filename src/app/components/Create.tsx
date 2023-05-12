@@ -11,6 +11,7 @@ import { Parents } from "@Components/create/stages/Parents";
 import { Clothing } from "@Components/create/stages/Clothing";
 import { Apparence } from "@Components/create/stages/Apparence";
 import { Random } from "./create/Random";
+import { Reset } from "./create/Reset";
 
 export const Create = () => {
   // Debug
@@ -35,7 +36,10 @@ export const Create = () => {
     <div className={debugMode ? "create_debug_container" : "create_container"}>
       <Block stage="create">
         <Stages setStage={setStage} stage={stage} />
-        <Random />
+        <div className="create_top_buttons">
+          <Random />
+          <Reset />
+        </div>
         {/* <div className="create_content_container">
           <Parents stage={stage} />
           <Apparence stage={stage} />

@@ -14,6 +14,12 @@
   justify-content: flex-end;
 }
 
+.create_top_buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+}
+
 .create_stages_container {
   display: flex;
   margin-bottom: 10%;
