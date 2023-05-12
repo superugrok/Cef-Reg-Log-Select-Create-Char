@@ -31,7 +31,7 @@ export const Switcher = ({ stage, type }: ISwitcherProps) => {
     ["browsColor", { dic: list.colorsList }],
     ["lipsColor", { dic: list.colorsList }],
     ["beardColor", { dic: list.colorsList }],
-    ["faceColor", { dic: list.colorsList }],
+    ["faceColor", { dic: list.faceColor }],
     ["hairGrudColor", { dic: list.colorsList }],
     ["rumyanColor", { dic: list.colorsList }],
     ["pomada", { dic: list.pomada }],

@@ -50,7 +50,7 @@ const initialState: ICreateReducer = {
     beardColor: "1",
     beardTp: -1,
     // Приметы
-    faceColor: "1",
+    faceColor: "Стандарт",
     faceColorTp: -1,
     hairGrud: "Стандарт",
     hairGrudColor: "1",
