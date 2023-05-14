@@ -8,7 +8,7 @@
   font-size: calc(15px + 0.390625vw);
   font-weight: 500;
   width: 100%;
-  margin-top: 5%;
+  margin-top: 2%;
   transition: 0.3s ease background;
 }
 .reglog_button:hover {

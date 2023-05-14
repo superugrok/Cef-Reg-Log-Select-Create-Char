@@ -1,5 +1,5 @@
 export interface IInputProps {
-  type: "email" | "password";
+  type: "email" | "password" | "player";
   placeholder: string;
   style?: React.CSSProperties;
   onChange?: Function;

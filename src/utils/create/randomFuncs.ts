@@ -22,14 +22,18 @@ const getParents = (fatherId: number, motherId: number) => {
   return { motherName, fatherName };
 };
 
-export const goRandom = (dispatch: Dispatch<AnyAction>) => {
-  const gender: ("Male" | "Female")[] = ["Male", "Female"];
-  const genderRandom = gender[getRandomInRange(0, 1)];
+export const goRandom = (
+  dispatch: Dispatch<AnyAction>,
+  gender: "Male" | "Female"
+) => {
+  // Gender is out of random for now
+  // const gender: ("Male" | "Female")[] = ["Male", "Female"];
+  // const genderRandom = gender[getRandomInRange(0, 1)];
   const parents = getParents(getRandomInRange(0, 20), getRandomInRange(21, 41));
   const randomState: ICreateReducer = {
     clothing: {},
     parents: {
-      gender: genderRandom,
+      gender,
       mother: parents.motherName,
       father: parents.fatherName,
       resValue: getRandomInRange(0, 100),
@@ -38,7 +42,7 @@ export const goRandom = (dispatch: Dispatch<AnyAction>) => {
     apparence: {
       // Причёска
       hair:
-        genderRandom == "Male"
+        gender == "Male"
           ? list.hairsMale[getRandomInRange(0, 22)]
           : list.hairsFemale[getRandomInRange(0, 22)],
       hairColor: list.hairColor[getRandomInRange(0, 64)],

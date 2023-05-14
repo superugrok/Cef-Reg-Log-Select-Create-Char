@@ -21,7 +21,7 @@
   padding: 1%;
   color: white;
   font-weight: 500;
-  width: 30%;
+  width: 35%;
   background-color: #165896;
   background-image: url("../../assets/img/create/reset.png");
   background-repeat: no-repeat;
@@ -263,15 +263,18 @@ details summary::marker {
   height: 100%;
   position: fixed;
 }
+.modal_create_input_container {
+  width: 100%;
+  margin-top: -2%;
+}
 .modal-content {
   position: absolute;
   background-color: rgba(0, 0, 0, 0.2); /* Полупрозрачное затемнение */
   z-index: 2;
   right: 40%;
   top: 30%;
-  width: 25vw;
-  padding-left: 10px;
-  padding-right: 10px;
+  width: 26vw;
+  padding: 1.5%;
   border-radius: 15px;
   backdrop-filter: blur(15px);
   color: white;
@@ -280,13 +283,13 @@ details summary::marker {
   animation-duration: 0.5s;
 }
 .modal_hover {
-  margin-top: 1.5vh;
-  font-size: 1.4vh;
+  font-size: 1.5rem;
   font-weight: bold;
+  margin-top: 0;
 }
 .modal_p {
-  margin-top: 1.4vh;
-  font-size: 1.2vh;
+  margin-top: 1%;
+  font-size: 1rem;
   line-height: 2.4vh;
 }
 .modal_i {

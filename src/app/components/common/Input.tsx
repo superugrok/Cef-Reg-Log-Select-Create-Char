@@ -3,6 +3,7 @@ import "@Styles/common/input.css";
 import { IInputProps } from "@Types/components/common/input";
 import emailImg from "@Images/reglog/mail.png";
 import passImg from "@Images/reglog/password.png";
+import playerImg from "@Images/reglog/person.png";
 
 export const Input = ({
   type,
@@ -36,7 +37,7 @@ export const Input = ({
   };
 
   const inputId = Math.random().toString();
-  const getLabel = (type: "email" | "password") => {
+  const getLabel = (type: "email" | "password" | "player") => {
     switch (type) {
       case "email":
         return (
@@ -50,6 +51,13 @@ export const Input = ({
           <label className="reglog_label" htmlFor={inputId}>
             <img className="reglog_label_pass_img" src={passImg} />
             <span>{label || "Password"}</span>
+          </label>
+        );
+      case "player":
+        return (
+          <label className="reglog_label" htmlFor={inputId}>
+            <img className="reglog_label_player_img" src={playerImg} />
+            <span>{label || "Player"}</span>
           </label>
         );
     }

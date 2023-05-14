@@ -4,7 +4,7 @@ import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
 import { finishEnter } from "@Store/actions/global";
 import { useDispatch, useSelector } from "react-redux";
-import { validateValue } from "@Utils/enter/validatePassEmail";
+import { validateValue } from "@Utils/validateInput";
 import { ICharsList, ILoginProps } from "@Types/components/enter/login";
 import { IStore } from "@Types/store/store";
 import { debugLogin } from "@Utils/enter/debugLogin";

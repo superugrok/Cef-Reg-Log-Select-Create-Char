@@ -2,8 +2,9 @@ import React, { FormEvent } from "react";
 import { Input } from "@Components/common/Input";
 import { Button } from "@Components/common/Button";
 import { Error } from "@Components/common/Error";
-import { validateValue } from "@Utils/enter/validatePassEmail";
+import { validateValue } from "@Utils/validateInput";
 import { IRegisterProps } from "@Types/components/enter/register";
+import { inputLiveValidate } from "@Utils/inputLiveValidate";
 
 export const Register = ({ stage }: IRegisterProps) => {
   // Errors states
@@ -12,17 +13,6 @@ export const Register = ({ stage }: IRegisterProps) => {
   const emailRegRef = React.useRef(null);
   const passRegRef = React.useRef(null);
   const passRepeatRegRef = React.useRef(null);
-
-  const inputLiveValidate = (value: string, type: "email" | "password") => {
-    const isEmailValid = validateValue(value.trim(), "email");
-    const isPassValid = validateValue(value.trim(), "password");
-    switch (type) {
-      case "email":
-        return isEmailValid;
-      case "password":
-        return isPassValid;
-    }
-  };
 
   const register = () => {
     const email = validateValue(emailRegRef.current.value.trim(), "email");
