@@ -17,6 +17,7 @@ import { Input } from "./common/Input";
 import { Error } from "./common/Error";
 import { inputLiveValidate } from "@Utils/inputLiveValidate";
 import { validateValue } from "@Utils/validateInput";
+import { queryGen } from "@Utils/create/queryGen";
 
 export const Create = () => {
   // Debug
@@ -45,7 +46,7 @@ export const Create = () => {
     const playerName = playerRef.current.value.trim();
     const isPlayerValid = validateValue(playerName, "player");
     if (isPlayerValid) {
-      console.log(createState);
+      queryGen(createState, "finish", null, null, playerName, debugMode);
       setModal(false);
     } else setError("Player name is invalid");
   };
@@ -72,6 +73,11 @@ export const Create = () => {
       </form>
     </div>
   );
+
+  // *** Window funcs ***
+  window.setCreateError = (error) => {
+    setError(error);
+  };
 
   return (
     <div className={debugMode ? "create_debug_container" : "create_container"}>

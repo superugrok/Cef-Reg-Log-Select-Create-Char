@@ -10,8 +10,10 @@ import { ISwitcherProps } from "@Types/components/create/create";
 
 export const Switcher = ({ stage, type }: ISwitcherProps) => {
   const dispatch = useDispatch();
+  const debugMode = useSelector((state: IStore) => state.global.debugMode);
   const value = useSelector((state: IStore) => state.create[stage][type]);
   const gender = useSelector((state: IStore) => state.create.parents.gender);
+  const currentState = useSelector((state: IStore) => state.create);
 
   // props.type - главный элемент логики, позволяет знать с каким свитчером идёт работа
   const dicCol = new Map([
@@ -40,7 +42,6 @@ export const Switcher = ({ stage, type }: ISwitcherProps) => {
     ["zagar", { dic: list.zagar }],
     ["rodinki", { dic: list.vesnushki }],
   ]);
-  //@ts-ignore
   let dic: string[] = dicCol.get(type).dic;
 
   let mathVar: { [key: string]: Function } = {
@@ -61,12 +62,13 @@ export const Switcher = ({ stage, type }: ISwitcherProps) => {
     let index: number = dic.indexOf(element.textContent);
     let member: any = dic[getMath(move, index)];
     if (member) {
-      type == "gender" && setDefaultState(dispatch);
+      type == "gender" && setDefaultState(dispatch, debugMode);
       // Check if next member exist
-      changeValue(dispatch, {
+      changeValue(dispatch, debugMode, {
         value: member,
-        type: type,
+        type,
         stage,
+        currentState,
       });
     }
   };

@@ -3,6 +3,7 @@ import { list } from "@Components/create/dictionaries/apparenceDic";
 import { ICreateReducer } from "@Types/store/create";
 import { AnyAction, Dispatch } from "@reduxjs/toolkit";
 import { setRandom } from "@Store/actions/create";
+import { queryGen } from "./queryGen";
 
 const getRandomFloat = (min: number, max: number) => {
   return Math.random() * (max - min) + min;
@@ -24,7 +25,8 @@ const getParents = (fatherId: number, motherId: number) => {
 
 export const goRandom = (
   dispatch: Dispatch<AnyAction>,
-  gender: "Male" | "Female"
+  gender: "Male" | "Female",
+  debugMode: boolean
 ) => {
   // Gender is out of random for now
   // const gender: ("Male" | "Female")[] = ["Male", "Female"];
@@ -103,6 +105,5 @@ export const goRandom = (
       rodinkiTp: getRandomFloat(-1, 1),
     },
   };
-  setRandom(dispatch, randomState);
-  // queryGen(props.all, "random", false, false, ranObj);
+  setRandom(dispatch, randomState, debugMode);
 };

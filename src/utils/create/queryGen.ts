@@ -1,5 +1,6 @@
 import { parentsList } from "@Components/create/dictionaries/parentsDic";
 import { list } from "@Components/create/dictionaries/apparenceDic";
+import { ICreateReducer } from "store/create";
 
 const getInt = (word: string, dic: string[], dicInt: number[] | boolean[]) => {
   let wordIndex = dic.indexOf(word);
@@ -7,114 +8,120 @@ const getInt = (word: string, dic: string[], dicInt: number[] | boolean[]) => {
 };
 
 export const queryGen = (
-  props: any,
-  action: string,
-  type?: string | boolean,
-  changes?: string | number | boolean,
-  ranObj?: object | boolean,
-  name?: string
+  currentState: ICreateReducer,
+  action: "change" | "gender" | "finish",
+  changeType?: string,
+  changeValue?: string | number,
+  name?: string,
+  debugMode?: boolean
 ) => {
-  let midObj: { [key: string]: any } = {
-    ...props.parents,
-    ...props.ressemblance,
-    ...props.apparence,
+  const state = {
+    ...currentState.parents,
+    ...currentState.apparence,
   };
-  if (type) midObj[`${type}`] = changes;
-  let genderVal = midObj.gender;
-  const finishStates: { [key: string]: number | boolean } = {
+  const gender = state.gender;
+  if (changeType) state[changeType] = changeValue;
+
+  const finishState: { [key: string]: number | boolean } = {
     // Родители
-    Mother: getInt(
-      midObj.mother,
-      parentsList.parentsFeDic,
-      parentsList.mothers
-    ),
-    Father: getInt(
-      midObj.father,
-      parentsList.parentsMaDic,
-      parentsList.fathers
-    ),
+    Mother: getInt(state.mother, parentsList.parentsFeDic, parentsList.mothers),
+    Father: getInt(state.father, parentsList.parentsMaDic, parentsList.fathers),
     // Ressemblance & Skin Tone
-    Resemblance: midObj.resValue,
-    SkinTone: midObj.skinValue,
+    Resemblance: state.resValue,
+    SkinTone: state.skinValue,
     // Apparence
-    EyeColor: getInt(midObj.eyesColor, list.eyeColor, list.eyeColorId),
-    HairColor: getInt(midObj.hairColor, list.hairColor, list.hairColorId),
+    EyeColor: getInt(state.eyesColor, list.eyeColor, list.eyeColorId),
+    HairColor: getInt(state.hairColor, list.hairColor, list.hairColorId),
     Hair: getInt(
-      midObj.hair,
-      genderVal == "Мужской" ? list.hairsMale : list.hairsFemale,
-      genderVal == "Мужской" ? list.hairsMaleId : list.hairsFemaleId
+      state.hair,
+      gender == "Male" ? list.hairsMale : list.hairsFemale,
+      gender == "Male" ? list.hairsMaleId : list.hairsFemaleId
     ),
-    NoseWidth: midObj.noseWidth,
-    NoseHeight: midObj.noseHeight,
-    NoseLength: midObj.noseLength,
-    NoseBridge: midObj.noseBridge,
-    NoseTip: midObj.noseTip,
-    NoseBridgeShift: midObj.noseBridgeShift,
-    BrowHeight: midObj.browsHeight,
-    BrowWidth: midObj.browsWidth,
-    CboneHeight: midObj.cboneHeight,
-    CboneWidth: midObj.cboneWidth,
-    CheekWidth: midObj.cheekWidth,
-    Eyes: midObj.eyes,
-    Lips: midObj.lips,
-    JawWidth: midObj.jawWidth,
-    ChinLength: midObj.chinLength,
-    ChinPos: midObj.chinPos,
-    ChinWidth: midObj.chinWidth,
-    ChinShape: midObj.chinShape,
-    NeckWidth: midObj.neckWidth,
-    Blemishes: getInt(midObj.deffects, list.deffects, list.deffectsId),
-    BlemishesOpacity: midObj.deffectsTp,
-    FacialHair: getInt(midObj.beard, list.beards, list.beardsId),
-    FacialHairOpacity: midObj.beardTp,
-    Eyebrows: getInt(midObj.brows, list.brows, list.browsId),
-    EyebrowsOpacity: midObj.browsTp,
-    Ageing: getInt(midObj.older, list.older, list.olderId),
-    AgeingOpacity: midObj.olderTp,
-    Makeup: getInt(midObj.cosmetics, list.cosmetics, list.cosmeticsId),
-    MakeupOpacity: midObj.cosmeticsTp,
-    Blush: getInt(midObj.rumyan, list.rumyan, list.rumyanId),
-    BlushOpacity: midObj.rumyanTp,
-    Complexion: getInt(midObj.faceColor, list.faceColor, list.faceColorId),
-    ComplexionOpacity: midObj.faceColorTp,
-    Sundamage: getInt(midObj.zagar, list.zagar, list.zagarId),
-    SundamageOpacity: midObj.zagarTp,
-    Lipstick: getInt(midObj.pomada, list.pomada, list.pomadaId),
-    LipstickOpacity: midObj.pomadaTp,
-    Freckles: getInt(midObj.rodinki, list.vesnushki, list.vesnushkiId),
-    FrecklesOpacity: midObj.rodinkiTp,
-    ChestHair: getInt(midObj.hairGrud, list.hairGrud, list.hairGrudId),
-    ChestHairOpacity: midObj.hairGrudTp,
-    EyebrowColor: getInt(midObj.browsColor, list.colorsList, list.colorsListId),
-    BeardColor: getInt(midObj.beardColor, list.colorsList, list.colorsListId),
+    NoseWidth: state.noseWidth,
+    NoseHeight: state.noseHeight,
+    NoseLength: state.noseLength,
+    NoseBridge: state.noseBridge,
+    NoseTip: state.noseTip,
+    NoseBridgeShift: state.noseBridgeShift,
+    BrowHeight: state.browsHeight,
+    BrowWidth: state.browsWidth,
+    CboneHeight: state.cboneHeight,
+    CboneWidth: state.cboneWidth,
+    CheekWidth: state.cheekWidth,
+    Eyes: state.eyes,
+    Lips: state.lips,
+    JawWidth: state.jawWidth,
+    ChinLength: state.chinLength,
+    ChinPos: state.chinPos,
+    ChinWidth: state.chinWidth,
+    ChinShape: state.chinShape,
+    NeckWidth: state.neckWidth,
+    Blemishes: getInt(state.deffects, list.deffects, list.deffectsId),
+    BlemishesOpacity: state.deffectsTp,
+    FacialHair: getInt(state.beard, list.beards, list.beardsId),
+    FacialHairOpacity: state.beardTp,
+    Eyebrows: getInt(state.brows, list.brows, list.browsId),
+    EyebrowsOpacity: state.browsTp,
+    Ageing: getInt(state.older, list.older, list.olderId),
+    AgeingOpacity: state.olderTp,
+    Makeup: getInt(state.cosmetics, list.cosmetics, list.cosmeticsId),
+    MakeupOpacity: state.cosmeticsTp,
+    Blush: getInt(state.rumyan, list.rumyan, list.rumyanId),
+    BlushOpacity: state.rumyanTp,
+    Complexion: getInt(state.faceColor, list.faceColor, list.faceColorId),
+    ComplexionOpacity: state.faceColorTp,
+    Sundamage: getInt(state.zagar, list.zagar, list.zagarId),
+    SundamageOpacity: state.zagarTp,
+    Lipstick: getInt(state.pomada, list.pomada, list.pomadaId),
+    LipstickOpacity: state.pomadaTp,
+    Freckles: getInt(state.rodinki, list.vesnushki, list.vesnushkiId),
+    FrecklesOpacity: state.rodinkiTp,
+    ChestHair: getInt(state.hairGrud, list.hairGrud, list.hairGrudId),
+    ChestHairOpacity: state.hairGrudTp,
+    EyebrowColor: getInt(state.browsColor, list.colorsList, list.colorsListId),
+    BeardColor: getInt(state.beardColor, list.colorsList, list.colorsListId),
     ChestHairColor: getInt(
-      midObj.hairGrudColor,
+      state.hairGrudColor,
       list.colorsList,
       list.colorsListId
     ),
-    BlushColor: getInt(midObj.rumyanColor, list.colorsList, list.colorsListId),
-    LipstickColor: getInt(midObj.lipsColor, list.colorsList, list.colorsListId),
+    BlushColor: getInt(state.rumyanColor, list.colorsList, list.colorsListId),
+    LipstickColor: getInt(state.lipsColor, list.colorsList, list.colorsListId),
   };
 
   switch (action) {
-    case "mid":
-      //@ts-ignore
-      mp.trigger(
-        "cef_cl_changeCharacterCustomization",
-        JSON.stringify(finishStates)
-      );
+    case "change":
+      {
+        debugMode
+          ? console.log(JSON.stringify(finishState))
+          : mp.trigger(
+              "cef_cl_changeCharacterCustomization",
+              JSON.stringify(finishState)
+            );
+      }
       break;
     case "gender":
-      //@ts-ignore
-      mp.trigger("cef_cl_changeSex", getInt(genderVal, gender, genderId));
+      {
+        debugMode
+          ? console.log(
+              getInt(gender, parentsList.gender, parentsList.genderId)
+            )
+          : mp.trigger(
+              "cef_cl_changeSex",
+              getInt(gender, parentsList.gender, parentsList.genderId)
+            );
+      }
       break;
     case "finish":
-      //@ts-ignore
-      mp.trigger("cef_cl_saveCharacter", JSON.stringify(finishStates), name);
-      break;
-    case "random":
-      //@ts-ignore
-      mp.trigger("cef_cl_changeCharacterCustomization", JSON.stringify(ranObj));
+      {
+        debugMode
+          ? console.log(JSON.stringify(finishState) + name)
+          : mp.trigger(
+              "cef_cl_saveCharacter",
+              JSON.stringify(finishState),
+              name
+            );
+      }
       break;
   }
 };

@@ -29,12 +29,11 @@ export const Login = ({ stage }: ILoginProps) => {
     (isEmailValide && isPassValide) || debugMode
       ? debugMode
         ? debugLogin(finishEnter, dispatch)
-        : console.log("Commiting login" + email + password)
+        : mp.trigger("cef_cl_auth", email, password)
       : setLogError("One or more of entered fields is incorrect");
   };
 
   // *** Window funcs ***
-  // @ts-ignore
   window.loginComplite = (
     email: string,
     jsonChars: string,
@@ -43,7 +42,6 @@ export const Login = ({ stage }: ILoginProps) => {
     const chars: ICharsList[] = JSON.parse(jsonChars);
     finishEnter(email, chars, priceToBuy, dispatch);
   };
-  // @ts-ignore
   window.setLoginError = (error: string) => {
     setLogError(error);
   };

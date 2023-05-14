@@ -9,10 +9,14 @@ export const SwitchRange = ({
   range,
   stage,
 }: ISwitchRangeProps): JSX.Element => {
+  // Debug mode
+  const debugMode = useSelector((state: IStore) => state.global.debugMode);
+  //
   const dispatch = useDispatch();
   const value = useSelector((state: IStore) => state.create[stage][type]);
+  const currentState = useSelector((state: IStore) => state.create);
   const changeRange = (value: number, type: string) => {
-    changeValue(dispatch, { value, type, stage });
+    changeValue(dispatch, debugMode, { value, type, stage, currentState });
   };
 
   return (

@@ -28,12 +28,11 @@ export const Register = ({ stage }: IRegisterProps) => {
       else if (!repeatPass) setRegError("Entered passwords are not equals");
     };
     email && password && repeatPass
-      ? console.log("Commiting register")
+      ? mp.trigger("cef_cl_registration", email, password)
       : identifyError();
   };
 
   // *** Window funcs ***
-  // @ts-ignore
   window.setRegisterError = (error: string) => {
     setRegError(error);
   };

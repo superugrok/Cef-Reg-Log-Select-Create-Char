@@ -36,7 +36,6 @@ export const CharBlock = ({ index, char }: ICharBlockProps) => {
   );
 
   // *** Window funcs ***
-  // @ts-ignore
   window.goCreate = () => {
     changeCurrentStage("create", dispatch);
   };
@@ -54,10 +53,8 @@ export const CharBlock = ({ index, char }: ICharBlockProps) => {
           debugMode
             ? changeCurrentStage("create", dispatch)
             : char
-            ? console.log(`Choose char ${char.charName} on ${userEmail}`)
-            : console.log(
-                `Buying slot number ${index} for ${openPrice} on ${userEmail}`
-              )
+            ? mp.trigger("cef_cl_enterAccount", char.charName)
+            : mp.trigger("cef_cl_unlockSlot", userEmail)
         }
       />
     </div>

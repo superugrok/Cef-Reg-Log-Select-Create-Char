@@ -1,3 +1,5 @@
+import { ICreateReducer } from "store/create";
+
 export interface ICreateSectionProps {
   stage: "parents" | "clothing" | "apparence";
 }
@@ -11,6 +13,7 @@ export interface ICreateChangeValue {
   value: string | number;
   type: string;
   stage: string;
+  currentState: ICreateReducer;
 }
 
 export interface ISwitcherProps {
