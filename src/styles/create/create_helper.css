@@ -2,10 +2,10 @@
 .btn_random {
   border: 1px solid #509ee7;
   border-radius: 1vw;
-  padding: 1%;
+  padding: 2%;
   color: white;
   font-weight: 500;
-  width: 50%;
+  width: 55%;
   background-color: #509ee7;
   background-image: url("../../assets/img/create/random.png");
   background-repeat: no-repeat;
@@ -14,14 +14,15 @@
   text-align: center;
   margin-top: -3%;
   margin-bottom: 5%;
+  font-size: calc(12px + 0.390625vw);
 }
 .btn_reset {
   border: 1px solid #165896;
   border-radius: 1vw;
-  padding: 1%;
+  padding: 2%;
   color: white;
   font-weight: 500;
-  width: 35%;
+  width: 40%;
   background-color: #165896;
   background-image: url("../../assets/img/create/reset.png");
   background-repeat: no-repeat;
@@ -30,6 +31,7 @@
   text-align: center;
   margin-top: -3%;
   margin-bottom: 5%;
+  font-size: calc(12px + 0.390625vw);
 }
 .btn_random:hover {
   border: 1px solid #327dc3;
@@ -41,7 +43,7 @@
 }
 .text_title {
   color: rgb(255 255 255 / 75%);
-  font-size: 0.9rem;
+  font-size: calc(10px + 0.390625vw);
   font-weight: 600;
   text-align: center;
   display: block;
@@ -143,7 +145,7 @@ details summary::marker {
     rgb(34, 35, 39) 30%,
     rgb(50, 52, 57) 100%
   );
-  width: 95%;
+  width: 100%;
   height: 52px;
   margin: 0 auto;
   margin-top: 3%;
@@ -347,7 +349,7 @@ details summary::marker {
   }
   .text_title {
     margin-top: 20px;
-    font-size: 1.7rem;
+    font-size: calc(10px + 0.390625vw);
   }
   .choise_section {
     margin-top: 50px;
@@ -395,7 +397,7 @@ details summary::marker {
 
 @media screen and (min-width: 1940px) {
   .text_title {
-    font-size: 1.1rem;
+    font-size: calc(10px + 0.390625vw);
   }
   .details_hover {
     height: 40px;

@@ -1,10 +1,16 @@
 .create_content_btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 3% 4%;
   background-color: #323439;
   border: none;
   color: white;
   font-size: calc(10px + 0.390625vw);
   transition: 0.3s ease background;
+}
+.create_content_btn_stages {
+  width: 33.3%;
 }
 
 .create_content_btn:hover {
@@ -33,6 +39,7 @@
 
 .create_content_image {
   margin-bottom: 2%;
+  height: 100%;
 }
 
 .create_parents_container {

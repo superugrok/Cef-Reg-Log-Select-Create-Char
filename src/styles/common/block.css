@@ -19,11 +19,12 @@
 
 .block_create {
   align-items: center;
+  padding: 1.1vw;
   width: 25vw;
   height: 85%;
   margin-right: 3%;
   margin-top: 3%;
-  background-color: rgb(91 91 91 / 70%);
+  background-color: rgba(78, 78, 78, 0.7);
 }
 
 @media screen and (max-width: 1240px) {

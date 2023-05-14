@@ -23,6 +23,7 @@
 .create_stages_container {
   display: flex;
   margin-bottom: 10%;
+  width: 90%;
 }
 
 .create_content_container {
