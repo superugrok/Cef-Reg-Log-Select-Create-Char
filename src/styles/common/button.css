@@ -1,7 +1,6 @@
 .reglog_button {
   text-transform: uppercase;
   padding: 5%;
-  background-color: #5c73df;
   color: white;
   border-radius: 0.5vw;
   border: 1px solid #5c73df;
@@ -11,15 +10,33 @@
   margin-top: 2%;
   transition: 0.3s ease background;
 }
-.reglog_button:hover {
+.reglog_button_day {
+  background-color: #5c73df;
+  border-color: #5c73df;
+}
+.reglog_button_day:hover {
   background-color: #3f5cdb;
   border-color: #3f5cdb;
 }
-.reglog_button:disabled,
-.reglog_button[disabled] {
+.reglog_button_night {
+  background-color: #b8802b;
+  border-color: #b8802b;
+}
+.reglog_button_night:hover {
+  background-color: #ca8318;
+  border-color: #ca8318;
+}
+.reglog_button_day:disabled,
+.reglog_button_day[disabled] {
   cursor: not-allowed;
-  background-color: #4e5b97;
-  border-color: #4e5b97;
+  background-color: #465181;
+  border-color: #465181;
+}
+.reglog_button_night:disabled,
+.reglog_button_night[disabled] {
+  cursor: not-allowed;
+  background-color: #66491d;
+  border-color: #66491d;
 }
 
 @media screen and (max-width: 1300px) {

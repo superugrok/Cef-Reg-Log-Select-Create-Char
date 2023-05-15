@@ -7,10 +7,14 @@ export const Random = () => {
   const dispatch = useDispatch();
   const debugMode = useSelector((state: IStore) => state.global.debugMode);
   const gender = useSelector((state: IStore) => state.create.parents.gender);
+  const dayTime = useSelector((state: IStore) => state.global.time);
+  const className = `btn_random ${
+    dayTime == "day" ? "btn_random_day" : "btn_random_night"
+  }`;
 
   return (
     <button
-      className="btn_random"
+      className={className}
       onClick={() => goRandom(dispatch, gender, debugMode)}
     >
       Random

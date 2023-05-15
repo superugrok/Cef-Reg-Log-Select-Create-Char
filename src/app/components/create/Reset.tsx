@@ -6,10 +6,14 @@ import { IStore } from "@Types/store/store";
 export const Reset = () => {
   const dispatch = useDispatch();
   const debugMode = useSelector((state: IStore) => state.global.debugMode);
+  const dayTime = useSelector((state: IStore) => state.global.time);
+  const className = `btn_reset ${
+    dayTime == "day" ? "btn_reset_day" : "btn_reset_night"
+  }`;
 
   return (
     <button
-      className="btn_reset"
+      className={className}
       onClick={() => setDefaultState(dispatch, debugMode)}
     >
       Reset

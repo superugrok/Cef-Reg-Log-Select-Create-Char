@@ -14,6 +14,13 @@
   transition: 0.5s ease border-color;
 }
 
+.reglog_input_day {
+  border-color: white;
+}
+.reglog_input_night {
+  border-color: #dac5a1;
+}
+
 .reglog_input::placeholder {
   position: absolute;
   top: 50%;
@@ -37,11 +44,18 @@
   width: 35%;
   text-transform: uppercase;
   font-weight: 500;
-  background-color: white;
   border: unset;
   border-top-left-radius: 0.3vw;
   border-bottom-left-radius: 0.3vw;
   padding: 3%;
+}
+.reglog_label_day {
+  background-color: white;
+  border-color: white;
+}
+.reglog_label_night {
+  background-color: #dac5a1;
+  border-color: #dac5a1;
 }
 
 .reglog_label span {

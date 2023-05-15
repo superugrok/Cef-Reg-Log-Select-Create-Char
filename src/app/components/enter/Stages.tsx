@@ -1,17 +1,28 @@
 import React from "react";
 import { IStagesProps } from "@Types/components/enter/stages";
+import { useSelector } from "react-redux";
+import { IStore } from "@Types/store/store";
 
 export const Stages = ({ stage, setStage }: IStagesProps) => {
+  const dayTime = useSelector((state: IStore) => state.global.time);
+  const className = `enter_stages_btn ${
+    dayTime == "day" ? "enter_stages_btn_day" : "enter_stages_btn_night"
+  }`;
+  const selectedClassName =
+    dayTime == "day"
+      ? "enter_stages_btn_day_selected"
+      : "enter_stages_btn_night_selected";
+
   const getStageBtnStyle = (btnStage: "login" | "register") => {
     switch (btnStage) {
       case "login":
         return stage == "login"
-          ? "enter_stages_btn enter_stages_btn_log enter_stages_btn_selected"
-          : "enter_stages_btn enter_stages_btn_log";
+          ? ` ${className} enter_stages_btn_log ${selectedClassName}`
+          : ` ${className} enter_stages_btn_log`;
       case "register":
         return stage == "register"
-          ? "enter_stages_btn enter_stages_btn_reg enter_stages_btn_selected"
-          : "enter_stages_btn enter_stages_btn_reg";
+          ? `${className} enter_stages_btn_reg ${selectedClassName}`
+          : `${className} enter_stages_btn_reg`;
     }
   };
 

@@ -31,13 +31,27 @@
   text-transform: uppercase;
   transition: 0.3s ease background;
 }
-.enter_stages_btn:hover {
+.enter_stages_btn_day {
+  border-color: #7d7df3;
+}
+.enter_stages_btn_night {
+  border-color: #c48932;
+}
+.enter_stages_btn_day:hover {
   border-color: #7d7df3;
   background-color: #7d7df3;
 }
-.enter_stages_btn_selected {
+.enter_stages_btn_night:hover {
+  border-color: #c48932;
+  background-color: #c48932;
+}
+.enter_stages_btn_day_selected {
   border-color: #7d7df3;
   background-color: #7d7df3;
+}
+.enter_stages_btn_night_selected {
+  border-color: #c48932;
+  background-color: #c48932;
 }
 
 .enter_stages_btn_log {

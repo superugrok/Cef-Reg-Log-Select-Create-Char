@@ -6,7 +6,6 @@
   color: white;
   font-weight: 500;
   width: 55%;
-  background-color: #509ee7;
   background-image: url("../../assets/img/create/random.png");
   background-repeat: no-repeat;
   background-position: 4.5%;
@@ -23,7 +22,6 @@
   color: white;
   font-weight: 500;
   width: 40%;
-  background-color: #165896;
   background-image: url("../../assets/img/create/reset.png");
   background-repeat: no-repeat;
   background-position: 4.5%;
@@ -33,13 +31,37 @@
   margin-bottom: 5%;
   font-size: calc(12px + 0.390625vw);
 }
-.btn_random:hover {
+.btn_reset_day {
+  background-color: #165896;
+  border-color: #165896;
+}
+.btn_reset_night {
+  background-color: #8a6834;
+  border-color: #8a6834;
+}
+.btn_random_day {
+  background-color: #509ee7;
+  border-color: #509ee7;
+}
+.btn_random_night {
+  background-color: #d39942;
+  border-color: #d39942;
+}
+.btn_random_day:hover {
   border: 1px solid #327dc3;
   background-color: #327dc3;
 }
-.btn_reset:hover {
+.btn_random_night:hover {
+  border: 1px solid #cc8720;
+  background-color: #cc8720;
+}
+.btn_reset_day:hover {
   border: 1px solid #035aac;
   background-color: #035aac;
+}
+.btn_reset_night:hover {
+  border-color: #94641c;
+  background-color: #94641c;
 }
 .text_title {
   color: rgb(255 255 255 / 75%);

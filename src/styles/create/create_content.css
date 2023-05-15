@@ -12,13 +12,18 @@
 .create_content_btn_stages {
   width: 33.3%;
 }
-
-.create_content_btn:hover {
+.create_content_btn_day:hover {
   background-color: #607cd6;
 }
+.create_content_btn_night:hover {
+  background-color: #c48932;
+}
 
-.create_content_btn--active {
+.create_content_btn--active_day {
   background-color: #4b70e7;
+}
+.create_content_btn--active_night {
+  background-color: #c48932;
 }
 
 .create_content_btn:first-child {

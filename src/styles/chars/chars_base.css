@@ -35,11 +35,18 @@
   margin-top: 6%;
   width: 100%;
 }
-.chars_header_title_active {
+.chars_header_title_active_day {
   background-color: #7f8ed8;
 }
-.chars_header_title_noactive {
-  background-color: #6b77ae;
+.chars_header_title_active_night {
+  background-color: #ca8c2f;
+}
+.chars_header_title_noactive_day {
+  background-color: #565f8a;
+  color: #f1efef;
+}
+.chars_header_title_noactive_night {
+  background-color: #8b6225;
   color: #f1efef;
 }
 
