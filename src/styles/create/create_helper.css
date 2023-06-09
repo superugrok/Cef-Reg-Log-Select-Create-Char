@@ -8,7 +8,7 @@
   width: 55%;
   background-image: url("../../assets/img/create/random.png");
   background-repeat: no-repeat;
-  background-position: 4.5%;
+  background-position: 5% 50%;
   background-size: auto;
   text-align: center;
   margin-top: -3%;
@@ -24,7 +24,7 @@
   width: 40%;
   background-image: url("../../assets/img/create/reset.png");
   background-repeat: no-repeat;
-  background-position: 4.5%;
+  background-position: 5% 50%;
   background-size: 17%;
   text-align: center;
   margin-top: -3%;
@@ -417,13 +417,23 @@ details summary::marker {
   }
 }
 
+@media screen and (min-width: 2560px) {
+  .btn_random {
+    background-size: 8%;
+  }
+
+  .text_title {
+
+  }
+}
+
 @media screen and (min-width: 1940px) {
   .text_title {
     font-size: calc(10px + 0.390625vw);
   }
   .details_hover {
     height: 40px;
-    font-size: 1.2rem;
+    font-size: calc(10px + 0.390625vw);
     line-height: 37px;
   }
   .switch_content {

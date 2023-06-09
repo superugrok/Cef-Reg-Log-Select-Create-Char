@@ -34,9 +34,17 @@ export const ParentsImage = () => {
   }, [fatherName, motherName]);
 
   return (
-    <div className="create_parents_image">
-      <img src={parentsImg?.fatherImg} />
-      <img src={parentsImg?.motherImg} />
+    <div className="create_parents_images">
+      <div className="create_parents_image">
+        <img
+          className="create_parents_image--father"
+          src={parentsImg?.fatherImg}
+        />
+        <img
+          className="create_parents_image--mother"
+          src={parentsImg?.motherImg}
+        />
+      </div>
     </div>
   );
 };
