@@ -50,6 +50,12 @@
   color: #f1efef;
 }
 
+@media screen and (min-width: 2560px) {
+  .chars_header_title {
+    font-size: calc(16px + 0.390625vw);
+  }
+}
+
 @media screen and (max-width: 1240px) {
   .chars_blocks_container {
     width: 80%;
