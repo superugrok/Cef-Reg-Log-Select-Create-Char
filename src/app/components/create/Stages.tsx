@@ -16,6 +16,7 @@ export const Stages = ({ setStage, stage }: IStagesProps) => {
 
   const stagesContent: any = stages.map(({ type, img, title }) => (
     <button
+      key={type}
       className={`create_content_btn ${btnClassName} create_content_btn_stages ${
         stage === type ? activeClassName : ""
       }`}
